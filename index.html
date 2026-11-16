@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><title>MVP IT | Путь гостя</title><style>
+:root{--bg:#101722;--panel:#182230;--panel2:#1d2a3a;--line:#354558;--ink:#f2f4f7;--muted:#b8c4d2;--mint:#9be3c5;--amber:#f3cb83;--coral:#f2aa9e}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:25px}body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--mint);text-underline-offset:4px}button,summary,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--amber);outline-offset:5px}main{max-width:1320px;margin:auto;padding:52px 42px 30px}.eyebrow{display:flex;gap:18px;align-items:center;color:var(--mint);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.brand{font-size:22px;color:var(--ink);letter-spacing:-.04em}.hero{display:grid;grid-template-columns:1fr 245px;gap:38px;margin:28px 0}h1{font-size:clamp(36px,4.8vw,65px);line-height:1.03;letter-spacing:-.045em;margin:0 0 21px;max-width:950px}h1 span{color:var(--mint)}.subtitle{font-size:20px;max-width:760px;color:var(--muted);margin:0}.verdict{border-left:2px solid var(--amber);padding:7px 0 7px 20px;align-self:center}.verdict b{display:block;font-size:38px;line-height:1.1;letter-spacing:-.04em}.verdict span{color:var(--muted);font-size:13px}.scope{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--panel);border:1px solid var(--line);border-radius:16px;margin-top:30px;overflow:hidden}.scope div{padding:19px 23px}.scope div+div{border-left:1px solid var(--line)}.micro{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--muted);display:block;margin-bottom:6px}.scope strong{font-size:16px;display:block;margin-bottom:4px}.scope p{font-size:13px;color:var(--muted);margin:0}.mint{color:var(--mint)}.amber{color:var(--amber)}.coral{color:var(--coral)}.notice{font-size:13px;color:var(--muted);margin:15px 0 31px}.phase-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}.phase-nav a{display:flex;gap:15px;text-decoration:none;background:#141e2b;border:1px solid var(--line);border-radius:10px;padding:14px 18px;align-items:center;color:var(--ink)}.phase-nav b{color:var(--mint);font-size:13px;white-space:nowrap}.phase-nav span{font-size:14px}.phase-nav i{font-style:normal;margin-left:auto;color:var(--muted)}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--line)}.filters,.tools{display:flex;gap:6px;flex-wrap:wrap}.filters{border-radius:9px;padding:4px;background:var(--panel)}button{color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:8px 12px;background:transparent;font-size:12px}.filters button{border-color:transparent}.filters button[aria-pressed=true]{background:#314539;color:var(--mint);border-color:#587963}.legend{display:flex;gap:23px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:18px 0 34px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}.dot.launch{background:var(--coral)}.dot.manual{background:var(--amber)}.dot.boundary{background:var(--mint)}.phase{margin:38px 0 45px;scroll-margin-top:25px}.phase-heading{display:flex;gap:20px;align-items:center;margin:0 0 20px}.phase-heading .phase-no{font-size:12px;color:var(--mint);border:1px solid var(--line);border-radius:50%;width:42px;height:42px;display:grid;place-items:center;flex-shrink:0}h2{font-size:29px;line-height:1.2;letter-spacing:-.03em;margin:0}.phase-heading p{font-size:13px;color:var(--muted);margin:5px 0 0}.phase-heading .range{font-size:12px;letter-spacing:.07em;color:var(--muted);margin-left:auto}.path{position:relative;display:grid;gap:17px;padding-left:54px}.path:before{position:absolute;content:"";left:20px;top:0;bottom:20px;width:1px;background:linear-gradient(var(--mint),var(--line))}.step{position:relative;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px 25px;min-width:0}.step:before{position:absolute;content:attr(data-number);left:-52px;top:22px;display:grid;place-items:center;width:35px;height:35px;border:1px solid #719486;border-radius:50%;background:var(--bg);font-size:12px;font-weight:700;color:var(--mint)}.step-top{display:flex;align-items:center;gap:14px;justify-content:space-between;margin-bottom:17px}.step h3{margin:0;font-size:21px;letter-spacing:-.025em;line-height:1.25}.badge{font-size:10px;text-transform:uppercase;letter-spacing:.07em;border:1px solid currentColor;border-radius:5px;padding:3px 7px;white-space:nowrap;color:var(--mint)}.badge.launch{color:var(--coral)}.badge.manual{color:var(--amber)}.step-main{display:grid;grid-template-columns:1.1fr 1fr;gap:25px}.layers{display:grid;gap:9px}.layer{display:grid;grid-template-columns:100px 1fr;gap:10px;align-items:baseline;font-size:12px}.layer dt{color:var(--muted);font-weight:500}.layer dd{margin:0;color:#e0e7ef}.layer.systems{border-top:1px dashed var(--line);padding-top:9px}.layer.systems dd{color:var(--mint);font-size:14px;line-height:1.5}.support-flow,.support-check{display:block}.support-check{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5}dl{margin:0}.question{border-left:2px solid var(--mint);padding-left:19px;align-self:start}.step[data-type=launch] .question{border-color:var(--coral)}.step[data-type=manual] .question{border-color:var(--amber)}.question .micro{font-size:10px;margin-bottom:7px}.question p{margin:0;font-size:20px;line-height:1.32;letter-spacing:-.02em;font-weight:600}.boundary-note{font-size:11px;color:var(--amber);margin:9px 0 0}.step details{border-top:1px solid var(--line);margin-top:19px;padding-top:12px}summary{cursor:pointer;font-size:12px;color:var(--muted);width:fit-content}summary:hover{color:var(--ink)}details ul{padding-left:20px;color:#d8e1eb;font-size:13px;line-height:1.6;margin:12px 0 0;max-width:940px}details li+li{margin-top:7px}.decision{border:1px solid #53695d;border-radius:17px;padding:28px;background:linear-gradient(120deg,#1d302c,#192332);margin:48px 0 30px}.decision-intro{max-width:770px;color:var(--muted);font-size:14px;margin:10px 0 22px}.decision-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}.decision-item{padding:20px;background:#19272d}.decision-item .letter{color:var(--mint);font-size:12px;display:block;margin-bottom:10px}.decision-item h3{font-size:17px;line-height:1.3;margin:0 0 8px}.decision-item p{font-size:13px;color:var(--muted);margin:0}.end-to-end{margin:20px 0 0;display:flex;gap:9px;align-items:center;flex-wrap:wrap;color:var(--mint);font-size:12px}.end-to-end span{border:1px solid #547366;border-radius:5px;padding:5px 9px}.end-to-end i{font-style:normal;color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:23px;color:var(--muted);font-size:12px}footer p{max-width:1000px;line-height:1.6}footer .source-links{display:flex;gap:10px 20px;flex-wrap:wrap;line-height:1.8}footer a{color:var(--muted)}.bottom{display:flex;justify-content:space-between;gap:15px;margin-top:25px;font-size:11px;color:#96a8ba}.empty{font-size:13px;color:var(--muted);display:none}.step[hidden]{display:none}.phase[hidden]{display:none}
+@media(min-width:1000px){.step{padding-top:24px;padding-bottom:20px}}
+@media(max-width:760px){main{padding:28px 20px}.hero{grid-template-columns:1fr;gap:22px;margin-top:25px}h1{font-size:43px}.subtitle{font-size:17px}.verdict{display:flex;gap:15px;align-items:center;padding:0 0 0 15px}.verdict b{font-size:28px}.verdict span{max-width:200px}.scope{grid-template-columns:1fr}.scope div{padding:15px 19px}.scope div+div{border-left:0;border-top:1px solid var(--line)}.phase-nav{gap:7px}.phase-nav a{padding:11px 10px;display:block}.phase-nav b{display:block;font-size:11px}.phase-nav span{font-size:12px}.phase-nav i{display:none}.toolbar{gap:12px}.legend{gap:10px 18px;font-size:11px}.phase{margin:28px 0}.phase-heading{gap:12px}h2{font-size:25px}.phase-heading .range{display:none}.path{padding-left:35px}.path:before{left:13px}.step{padding:18px 16px}.step:before{left:-35px;top:19px;width:26px;height:26px;font-size:10px}.step-top{align-items:flex-start;flex-direction:column;gap:9px}.step h3{font-size:20px}.step-main{grid-template-columns:1fr;gap:18px}.layer{grid-template-columns:85px 1fr;font-size:12px;gap:9px}.question{padding-left:13px}.question p{font-size:19px}.decision{padding:20px;margin-top:35px}.decision-grid{grid-template-columns:1fr}.decision h2{font-size:25px}.bottom{display:block}.bottom span{display:block;margin-top:6px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{size:A4;margin:12mm}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:white;color:#172331;font-size:11px}main{max-width:none;padding:0}.hero{grid-template-columns:1fr 155px;gap:20px;margin:18px 0}h1{font-size:36px}.subtitle{font-size:15px}.eyebrow,.brand{color:#244738}.brand{font-size:18px}.verdict b{font-size:28px}.verdict span,.scope p,.notice,.micro,.phase-heading p,.range,.layer dt,summary,footer,.bottom{color:#495867}.scope{background:#f4f7f6;grid-template-columns:repeat(3,1fr)}.scope div{padding:12px}.scope strong{font-size:13px}.scope div+div{border-left:1px solid #bcc8c2;border-top:0}.mint,.amber,.coral,h1 span{color:#244738}.phase-nav,.toolbar{display:none}.legend{margin:15px 0}.phase{margin:20px 0;break-inside:auto}.phase-heading{break-after:avoid}h2{font-size:23px}.path{padding-left:35px;gap:12px}.path:before{left:12px;background:#a2b2a9}.step{background:white;border-color:#b9c5ce;padding:16px;break-inside:avoid}.step:before{left:-36px;background:white;color:#244738;border-color:#688477}.step-top{margin-bottom:10px}.step h3{font-size:17px}.step-main{grid-template-columns:1.1fr 1fr;gap:15px}.layer{font-size:10px;grid-template-columns:85px 1fr;gap:5px}.layer dd,details ul{color:#24313f}.layer.systems dd{color:#244738;font-size:11px}.support-check{color:#495867;font-size:10px}.question{border-color:#567a69}.question p{font-size:16px}.question .micro{font-size:9px}.badge,.badge.launch,.badge.manual{color:#324c40}.boundary-note{color:#79501c}details{display:block!important}details>ul{display:block!important;font-size:11px}details>summary{list-style:none;color:#334c40;font-weight:600}.step[hidden],.phase[hidden]{display:block!important}.step details{padding-top:9px;margin-top:10px}.decision{background:#eef3f0;border-color:#9bb1a3;padding:20px;break-inside:avoid;margin-top:25px}.decision-grid{grid-template-columns:repeat(2,1fr);border-color:#bac8c0;background:#bac8c0}.decision-item{background:#f8faf9;padding:12px}.decision-item h3{font-size:14px}.decision-item p,.decision-intro{font-size:11px;color:#3f505b}.decision-item .letter,.end-to-end{color:#244738}.decision-item .letter{margin-bottom:5px}.end-to-end{font-size:10px}.source-links a{color:#344c41}footer{font-size:10px}footer a{overflow-wrap:anywhere}.bottom{font-size:9px}.phase-heading .phase-no{color:#244738}.scope,.step,.decision-grid{border-radius:8px}}
+
+/* Data maps: proposed logical model */
+.data-map{margin:30px 0 26px;padding:25px;border:1px solid #51617a;border-radius:16px;background:#151f2d}.dm-heading h2{font-size:27px}.dm-heading>p{font-size:13px;color:var(--muted);margin:9px 0 15px;max-width:900px}.dm-legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:12px 0 17px;font-size:11px}.dm-auto{color:#f3cb83}.dm-manual{color:#d0bbff}.dm-choice{color:#a9cafa}.dm-legend span:before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;background:currentColor;border-radius:50%}.dm-flow{display:flex;align-items:stretch;gap:8px}.dm-node{min-width:0;flex:1;padding:12px;border:1px solid #657183;border-radius:9px;background:#1c2938;font-size:12px;line-height:1.4;overflow-wrap:break-word}.dm-node strong{display:block;font-weight:600}.dm-node>span{display:block;margin-top:6px;color:var(--muted);font-size:11px}.dm-system{border-color:#647fa6;border-top:3px solid #8cb6eb}.dm-object{border-color:#8976a3}.dm-flow>.dm-object{border-top:3px solid #bd9ddf}.dm-edge{flex:0 0 72px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;font-size:10px;line-height:1.3;color:var(--muted)}.dm-edge b{font-size:19px;font-weight:500;white-space:nowrap;color:#bdd0e5}.dm-branches{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}.dm-branch{display:flex;gap:7px;align-items:stretch}.dm-branch .dm-node{padding:8px;font-size:11px}.dm-branch .dm-node>span{font-size:10px;margin-top:4px}.dm-branch .dm-edge{flex-basis:85px;font-size:10px}.dm-boundaries,.dm-candidates{font-size:11px;color:var(--muted);margin:9px 0;line-height:1.5}.dm-boundaries strong,.dm-candidates strong{color:var(--ink)}.dm-dictionary{border-top:1px solid var(--line);padding-top:12px;margin-top:14px}.dm-dictionary>summary{font-size:13px;color:#b7d1f2}.dm-dictionary-body{padding-top:15px}.dm-dictionary h3{font-size:17px;margin:0 0 12px}.dm-objects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:23px}.dm-objects>a{display:block;border:1px solid #6e5e83;border-top:3px solid #bd9ddf;border-radius:8px;padding:12px;background:#1d2534;text-decoration:none;color:var(--ink);font-size:12px}.dm-objects>a strong{display:block;margin-bottom:6px}.dm-objects>a span{color:var(--muted);line-height:1.5}.dm-compare-intro{font-size:12px;color:var(--muted);margin:0 0 12px}.dm-table-wrap{max-width:100%}.dm-compare{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}.dm-compare th,.dm-compare td{text-align:left;vertical-align:top;border:1px solid var(--line);padding:10px;overflow-wrap:break-word}.dm-compare th{color:#c6d8f1;background:#203047}.dm-compare thead th:first-child{width:21%}.dm-compare td{color:var(--muted)}.step-data-map{margin:22px 0 0;padding:17px;border:1px solid #4b5b70;border-radius:10px;background:#141f2d}.step-data-map figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px;font-size:12px}.step-data-map figcaption>strong{color:#c6d8f1}.step-data-map figcaption>span{font-size:10px}.step-data-map .dm-node{font-size:12px;background:#1b2a3a}.step-data-map .dm-edge{flex-basis:90px}.dm-notes{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:14px 0 0}.dm-notes>div{min-width:0}.dm-notes dt{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#a8bbd1;margin-bottom:5px}.dm-notes dd{font-size:11px;color:var(--muted);margin:0;line-height:1.5}.dm-parallel-parent{max-width:300px;text-align:center;margin:0 auto;border:1px solid #8976a3;border-radius:7px;padding:9px;font-size:12px}.dm-parallel-note{color:var(--muted);text-align:center;font-size:11px;margin:8px 0 12px}.dm-parallel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.dm-parallel .dm-node{position:relative}.dm-parallel .dm-node:before{content:"";height:10px;width:1px;position:absolute;top:-11px;left:50%;background:#657183}
+@media(max-width:1000px){.data-map>.dm-flow .dm-edge{flex-basis:52px}.data-map>.dm-flow .dm-node{padding:8px;font-size:11px}.dm-objects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.data-map{padding:17px;margin-top:24px}.dm-heading h2{font-size:24px}.dm-heading>p{font-size:12px}.dm-flow{flex-direction:column;gap:6px}.dm-edge,.data-map>.dm-flow .dm-edge,.step-data-map .dm-edge{flex-basis:auto;min-height:42px;flex-direction:row;gap:12px}.dm-edge>span{max-width:80%}.dm-node,.data-map>.dm-flow .dm-node{font-size:12px;padding:11px}.dm-branches{grid-template-columns:1fr}.dm-branch{display:grid;grid-template-columns:minmax(0,1fr) 70px minmax(0,1fr);gap:5px}.dm-branch .dm-edge{flex-direction:column;min-height:0;gap:4px}.dm-branch .dm-edge>span{max-width:100%;overflow-wrap:break-word}.dm-branch .dm-node{padding:7px;font-size:10px}.dm-objects{grid-template-columns:1fr}.dm-compare{font-size:10px}.dm-compare th,.dm-compare td{padding:6px}.dm-compare thead th:first-child{width:25%}.step-data-map{padding:12px;margin-top:18px}.step-data-map figcaption{align-items:flex-start;flex-direction:column;gap:5px}.dm-notes{grid-template-columns:1fr;gap:10px}.dm-notes dt{margin-bottom:3px}.dm-parallel{grid-template-columns:1fr;gap:11px}.dm-parallel .dm-node:before{display:none}.dm-parallel-parent{max-width:none}.dm-parallel-note{line-height:1.4}}
+@media print{.data-map>.dm-flow{flex-direction:column;gap:4px}.data-map>.dm-flow>.dm-edge{flex:0 0 auto;flex-direction:row;gap:10px;min-height:20px}.data-map>.dm-flow>.dm-node{flex:initial;padding:9px}.data-map,.step-data-map{background:#f5f7fa;border-color:#9eabbc;color:#182b40}.data-map{padding:15px;break-inside:auto;margin:20px 0}.dm-heading h2{font-size:21px}.dm-heading>p,.dm-boundaries,.dm-candidates,.dm-compare-intro,.dm-notes dd,.dm-parallel-note{color:#405169}.dm-auto{color:#855707}.dm-manual{color:#64408d}.dm-choice{color:#285789}.dm-node,.step-data-map .dm-node,.dm-objects>a{background:#fff;color:#182b40;break-inside:avoid}.dm-node>span,.dm-objects>a span{color:#405169}.dm-edge,.dm-edge b,.dm-boundaries strong,.dm-candidates strong,.dm-notes dt,.step-data-map figcaption>strong{color:#304c6c}.dm-objects{grid-template-columns:repeat(2,minmax(0,1fr))}.dm-objects>a{color:#182b40;font-size:10px}.dm-dictionary h3{font-size:15px;break-after:avoid}.dm-compare{font-size:10px}.dm-compare th{background:#e4ebf4;color:#263f5f}.dm-compare td{color:#263f5f}.dm-compare tr{break-inside:avoid}.dm-compare th,.dm-compare td{border-color:#aebbc9}.dm-dictionary>summary{color:#304c6c}.dm-dictionary-body{display:block}.step{break-inside:auto}.step-top,.step-main{break-inside:avoid}.step-data-map{break-inside:avoid;padding:12px;margin-top:12px}.dm-notes{gap:10px}.dm-notes dd{font-size:10px}.dm-flow .dm-node{font-size:10px;padding:8px}.dm-edge{font-size:9px;flex-basis:58px}.dm-compact .dm-edge{flex-basis:72px}.dm-branches{break-inside:auto}.dm-branch{break-inside:avoid}.dm-boundaries,.dm-candidates{font-size:10px}.dm-parallel .dm-node{font-size:10px}}
+
+/* Consolidated editorial pass: independent tracks and non-repeated notes */
+.dm-question-note{font-size:12px!important;line-height:1.5!important;font-weight:400!important;color:var(--muted)!important;margin-top:10px!important}.dm-track-heading{font-size:13px;color:#c6d8f1;margin:15px 0 10px}.dm-track-heading:first-of-type{margin-top:0}.dm-scenario-group{font-size:13px;color:#c6d8f1;margin:16px 0 8px}.dm-notes.dm-with-example{grid-template-columns:repeat(3,minmax(0,1fr))}.dm-end-note{font-size:12px;color:var(--muted);margin:10px 0 0}
+@media(max-width:760px){.dm-notes.dm-with-example{grid-template-columns:1fr}.dm-question-note{font-size:12px!important}}
+@media print{.dm-track-heading,.dm-scenario-group{color:#304c6c;break-after:avoid}.dm-question-note,.dm-end-note{color:#405169!important}.dm-track-heading{font-size:11px}.dm-scenario-group{font-size:11px}}
+
+/* Print: keep phase titles with the first step; start later steps on a new page */
+@media print{.phase{break-before:page}.phase-heading{break-inside:avoid;break-after:avoid}.phase .path{display:block;break-before:avoid}.phase .path>.step{margin-bottom:12px}.phase .path>.step+.step{break-before:page}.step-top{break-after:avoid}.step-main{break-before:avoid}}
+
+/* Print-only compaction: avoid one-line continuations and a footer-only page */
+@media print{body{zoom:.94}footer{padding-top:8px}.bottom{margin-top:8px}.decision{margin-bottom:12px}}
+
+@media print{.subtitle{color:#495867}.verdict{display:block}.verdict span{display:block;max-width:none}.dm-objects>a{break-inside:avoid}.dm-dictionary>summary,.dm-track-heading,.dm-scenario-group{break-after:avoid}.dm-compare-intro{break-inside:avoid}.step>details{break-inside:avoid}.step-data-map .dm-flow{flex-direction:row;gap:6px}.step-data-map .dm-edge{flex-basis:60px;min-height:0;flex-direction:column;gap:4px}.step-data-map .dm-edge>span{max-width:none}.step-data-map figcaption{flex-direction:row}.dm-notes{grid-template-columns:1fr 1fr}.dm-notes.dm-with-example{grid-template-columns:repeat(3,minmax(0,1fr))}.dm-parallel{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+@media print{footer .bottom{display:flex;justify-content:space-between;gap:15px}footer .bottom span{margin-top:0}}
+
+/* ReMarked offer notes, 11.11.2026 */
+.offer-details{border-top:1px solid var(--line);margin-top:14px;padding-top:10px}.offer-details p{margin-top:12px}.offer-details summary{font-size:12px;line-height:1.5}.hero .notice{margin:12px 0 0}
+@media print{.offer-details p{color:#3f505b}.offer-details summary{color:#334c40}.offer-details{break-inside:auto}}
+
+/* Layered use-case examples */
+.use-case h4{font-size:17px;line-height:1.35;margin:15px 0 8px;color:var(--ink)}.use-case .uc-layers{grid-template-columns:1fr;gap:12px}.use-case .uc-layers>div{display:grid;grid-template-columns:190px 1fr;gap:14px;padding-top:10px;border-top:1px dashed var(--line)}.use-case .uc-layers dt{font-size:11px;line-height:1.5;text-transform:none;letter-spacing:0;margin:0;color:#c6d8f1}.use-case .uc-layers dd{font-size:13px;line-height:1.6}.use-case>.dm-boundaries{font-size:12px}
+@media(max-width:760px){.use-case .uc-layers>div{grid-template-columns:1fr;gap:5px}.use-case h4{font-size:16px}}
+@media print{.use-case h4{font-size:14px;color:#263f5f;break-after:avoid}.use-case .uc-layers>div{grid-template-columns:150px 1fr;gap:10px;border-color:#aebbc9;break-inside:avoid}.use-case .uc-layers dt,.use-case .uc-layers dd,.use-case>.dm-boundaries{font-size:10px;color:#405169}.use-case .uc-layers{gap:8px}}
+
+/* Print pagination: keep comparison intact; use the full page width for decision prose. */
+@media print{.dm-comparison{break-before:page;break-inside:avoid}.dm-comparison>h3{break-after:avoid}.decision-grid{grid-template-columns:1fr}.decision-item{break-inside:avoid}.decision-item+.decision-item{border-top:1px solid #bac8c0}}
+
+@media print{.dm-boundaries a,.dm-compare a{color:#285789}}
+
+/* Current launch decisions, 13 November 2026 */
+.current-plan{margin:28px 0;padding:24px;border:1px solid #405269;border-radius:14px;background:rgba(115,175,175,.06)}
+.current-plan h2{margin-top:0;font-size:25px;line-height:1.25}.current-plan h3{font-size:18px;line-height:1.35;margin:22px 0 8px}.current-plan p{line-height:1.65}.current-plan .text{margin:0 auto}.current-plan .update-date{font-size:13px;opacity:.8;margin-top:0}.current-plan .open-choice{border-left:3px solid #8eaaa9;padding-left:15px}
+@media(max-width:600px){.current-plan{padding:18px;margin:20px 0}.current-plan h2{font-size:23px}}
+@media print{.current-plan{background:none!important;padding:14px;margin:12px 0;break-inside:auto}.current-plan h2,.current-plan h3{break-after:avoid}.current-plan p{orphans:3;widows:3}}
+</style></head><body><main><header><div class="eyebrow"><span class="brand">БК1830</span><span>Путь гостя / карта проверки</span></div><div class="hero"><div><h1>MVP IT | <span>Путь гостя</span></h1><p class="subtitle">Как гость проходит путь от покупки до ухода, что делают сотрудники и что нужно проверить в системах</p><p class="notice">Определены первые шаги собственного сайта и проверены правила API ReMarked. Передачу заявок и совместную работу систем клуба ещё предстоит проверить</p></div><aside class="verdict"><b>3–6 месяцев</b><span>Временное решение для запуска<br/>По итогам решить, какая система нужна дальше</span></aside></div><div class="scope"><div><span class="micro mint">На сайте</span><strong>Индивидуальные посещения и билеты на мероприятия</strong><p>Гость выбирает часы посещения или билет на мероприятие. Нужно продавать только те места, которые клуб может предоставить на всё выбранное время. Основной случай — один гость; покупку за компанию проверяем отдельно</p></div><div><span class="micro amber">На рецепции</span><strong>Процедуры и выбор мастера</strong><p>В первые месяцы сотрудники рецепции записывают гостей на процедуры и добавляют услуги к текущему посещению</p></div><div><span class="micro coral">Оплата и расчёт</span><strong>Онлайн-оплата и расчёт в iiko</strong><p>Решить, кто проверяет оплату, вносит записи и помогает гостю, если система дала сбой</p></div></div></header><section class="current-plan" id="launch-plan-20261113" aria-labelledby="launch-plan-title"><h2 id="launch-plan-title">С чего начинаем свой сайт</h2><p class="update-date">Решения клуба · 13 ноября 2026</p><p>Для первого запуска делаем собственную форму, которая передаёт заявку в ReMarked. До оплаты покупатель оставляет <strong>e-mail и телефон</strong>: на почту получает билет или подтверждение, по телефону сотрудники связываются по отмене, переносу или уточнению. Он указывает количество билетов каждой категории; персональные анкеты всех посетителей на этом шаге не собираем. Покупатель может не быть гостем.</p><p><strong>Собственную базу гостей, кабинет и сохранение черновиков на старте не предусматриваем.</strong> Напоминания о незавершённой покупке отложены. Это решение о нашем сайте; оно не отменяет хранение и работу с данными в ReMarked и других выбранных системах.</p><p>Передача в ReMarked без хранения заявки у нас — <strong>проект, а не уже работающий обмен</strong>. Намерение — отправлять данные прямо из браузера; сначала нужно подтвердить безопасный доступ для этой формы. Секретный серверный ключ в браузер не передаётся. Нужен ли посредник и кто его предоставляет, ещё не выбрано. Помимо контактов запрос содержит дату, время, длительность, тариф, состав покупки, необходимые номера записей и подтверждения согласий.</p><p>В сценариях ниже проверяем выбранный способ создания брони, оплаты и последующего изменения. Наличие API не доказывает готовность нашей интеграции. Права клуба, соответствия записей, перенос, возврат и полную выгрузку нужно подтвердить отдельно.</p><h3>Подарок — отдельный путь</h3><p class="open-choice">Покупатель приобретает сертификат, затем его используют для бронирования, и в клуб приходит гость. Получатель подарка может быть другим человеком. Ещё нужно выбрать, будет ли сертификат именным или на предъявителя, а отдельно — кому и как его доставлять: покупателю или получателю подарка. Нужно решить, что даёт сертификат: определённую сумму на покупки или конкретную услугу. Можно ли использовать его частями и передать другому человеку? Как учитывать остаток и оформлять возврат? Какие сведения о получателе и использовании сертификата увидит покупатель? В какой системе сертификат выпускается и погашается? Поддержка всего этого пути выбранными системами пока не подтверждена.</p></section><section aria-labelledby="data-map-title" class="data-map" id="data-map"><div class="dm-heading"><span class="micro">Как должны быть связаны сведения</span><h2 id="data-map-title">Как связать покупку, посещение и расчёт</h2><p>Ниже — как клубу нужно обслуживать гостя от покупки до ухода. На демонстрации предстоит выбрать, где хранить записи и что системы будут передавать друг другу. Готовность такого обмена пока не подтверждена</p></div><div class="dm-legend"><span class="dm-auto">Автоматически — нужно проверить</span><span class="dm-manual">Вручную на старте</span><span class="dm-choice">Где хранить — выбрать</span></div><div class="dm-flow"><div class="dm-node dm-system"><strong>Выбрать посещение на сайте или рецепции</strong></div><div class="dm-edge"><span>Контакт покупателя, время и число мест</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Оформить покупку и определить, когда закрепляется место</strong></div><div class="dm-edge"><span>Номер и состав покупки</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Оплатить покупку через платёжную систему</strong></div></div><div class="dm-branches"><div class="dm-branch"><div class="dm-node dm-system"><strong>Управлять тарифами и мероприятиями</strong></div><div class="dm-edge"><span>Состав, цена, время и ограничения</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Показать варианты на сайте</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Получить подтверждение платежа</strong></div><div class="dm-edge"><span>Сумма и номер операции</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Связать полученную сумму с покупкой</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Распределить предоплату между заказами</strong></div><div class="dm-edge"><span>Какая часть оплаты относится к каждому заказу</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Зачесть оплату в заказах iiko</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Отметить приход и уход на рецепции</strong></div><div class="dm-edge"><span>Купленное посещение, пришедший гость и время</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Учесть фактическое посещение</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Выдать браслет и закрепить шкафчик</strong></div><div class="dm-edge"><span>Гость и время; место — если закрепляется</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Сохранить выдачу, закрепление и возврат</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Записать к мастеру и отметить выполнение</strong></div><div class="dm-edge"><span>Выполнение или отмена, начисление</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Учесть услугу в заказе iiko</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Перенести, отменить или продлить</strong></div><div class="dm-edge"><span>Новое время, состояние и доступные места</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Обновить бронь или билет</strong></div></div><div class="dm-branch"><div class="dm-node dm-system"><strong>Получить сведения из выбранных систем</strong></div><div class="dm-edge"><span>Покупки, посещения, заказы, деньги и выдача</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Получить историю с сохранёнными связями записей</strong></div></div></div><p class="dm-boundaries">Читайте схемы слева направо: рамки показывают действия, стрелки — какие сведения нужны дальше. Пояснения к понятиям — в сиреневых карточках словаря. Обмен между системами поставщик должен показать</p><p class="dm-boundaries">Банк или платёжный сервис подтверждает оплату. Сотрудники находят её в покупке и учитывают при расчёте. Рецепция отмечает приход, уход и выдачу браслета; в iiko ведут заказы и суммы к оплате. Где хранить покупки, записи о посещениях и остальные сведения — ещё нужно выбрать</p><p class="dm-candidates">Основной путь для продажи и бронирования — собственный сайт с API ReMarked. Передачу заявок и доступные клубу методы ещё нужно подтвердить. Для работы в клубе, браслетов и расчёта с iiko отдельно проверяем BandGo; совместная работа систем пока не испытана. Совместимость с конкретными замками, включая TTLock, поставщик оборудования должен показать</p><details class="dm-dictionary" id="data-map-dictionary"><summary>Объекты данных и сравнение вариантов</summary><div class="dm-dictionary-body"><h3>Словарь: понятия и связи</h3><div class="dm-objects"><a class="dm-object" href="#step-06"><strong>Покупатель и гость</strong><span>Покупатель может оплатить за других и сам не прийти. Гость — человек, который посещает клуб. До оплаты нужны e-mail и телефон покупателя и количество билетов каждой категории; анкеты всех посетителей не собираем. Когда человек приходит, сотрудник отмечает, каким купленным посещением или билетом он воспользовался</span></a><a class="dm-object" href="#step-01"><strong>Предложение, тариф и мероприятие</strong><span>Предложение и тариф описывают, что входит в посещение, сколько оно длится и стоит, какие условия действуют. Эти условия сохраняются в покупке. Для мероприятия также задают время программы, число мест, нужные зоны и время подготовки</span></a><a class="dm-object" href="#step-03"><strong>Покупка, бронь и билет</strong><span>Покупка объединяет выбранные посещения или билеты, покупателя и оплату. Бронь — запись о выбранном месте и времени. Когда место закрепляется за покупателем и на какой срок — определить для выбранного способа оформления. Билет даёт право участия в мероприятии, но не обязательно создаёт отдельную бронь или запись предоплаты. Билет Events и QR-подтверждение обычной брони — не один и тот же объект</span></a><a class="dm-object" href="#step-06"><strong>Фактическое посещение</strong><span>Фактическое посещение — пребывание конкретного гостя от прихода до ухода. Купленное посещение или билет ещё не означают приход. Статус брони, закрытый кассовый заказ и разрешение на выход не подтверждают фактический уход. За одно посещение могут быть несколько услуг и заказов</span></a><a class="dm-object" href="#step-02"><strong>Вместимость и доступные ресурсы</strong><span>Клубу нужно учитывать каждого гостя один раз в общей вместимости на всё время посещения. Кроме общего места, проверяют место на мероприятии, время мастера и свободное помещение. Число броней на один отрезок времени не показывает, сколько людей сейчас в клубе. Отдельно решить, оставлять ли запас для рецепции и продления и кто вправе его использовать или превысить лимит. Запас не решит любую задержку гостя</span></a><a class="dm-object" href="#step-08"><strong>Запись на услугу и её выполнение</strong><span>Мастер, запись на его время, выполненная услуга и позиция кассового заказа — разные понятия. Запись занимает время мастера и помещения; выполнение или отмену отмечают отдельно. В целевом расчёте выполненная услуга начисляется один раз. Предоплата уменьшает доплату, а не стоимость оказанной услуги</span></a><a class="dm-object" href="#step-10"><strong>Заказы и общий расчёт</strong><span>В заказе iiko записаны услуги и их стоимость — начисления. За одно посещение может быть несколько заказов. При общем расчёте сотрудник видит их итог, уже зачтённую оплату, доплату или возврат. Объединение заказов для расчёта не должно повторно добавлять стоимость услуг</span></a><a class="dm-object" href="#step-04"><strong>Оплата и возврат</strong><span>Платёжная система подтверждает получение денег. Запись об оплате в CRM, её отражение и зачёт по заказам, закрытие заказа, кассовый чек или другой фискальный документ и возврат — отдельные события. Их порядок зависит от выбранного способа расчёта. В целевой модели видно, за что внесена сумма, сколько зачтено, ещё не зачтено и возвращено; одна сумма не используется дважды. Часть оплаты, уже назначенная другому посещению или заказу, не становится свободной только потому, что её ещё не зачли; перераспределение согласуется отдельно. Возврат не отменяет автоматически остальные посещения или услуги</span></a><a class="dm-object" href="#step-07"><strong>Браслет, шкафчик и посадочное место</strong><span>Сотрудники выдают браслет и закрепляют за гостем шкафчик на время посещения. При необходимости отдельно закрепляют посадочное место. Замена сохраняет посещение, услуги и оплату. Потерянный браслет должен перестать открывать прежний шкафчик. Уход гостя, возврат браслета и готовность шкафчика отмечаются отдельно</span></a><a class="dm-object" href="#step-11"><strong>Обращение гостя</strong><span>Обращение — вопрос или отзыв гостя. Сотруднику нужно найти посещение, записать вопрос, назначить ответственного и срок ответа. Ответ и результат сохраняются; нерешённый вопрос виден следующей смене. Где это вести и что умеет выбранная система — ещё проверить. Если нужно исправить расчёт, это делают отдельно от ответа гостю</span></a></div><p class="dm-boundaries">В истории видно, кто, когда и что изменил. У каждой записи нужно сохранить номер и название системы, которая его выдала. Заказ платёжной системы, заказ iiko и запись продажи ReMarked — разные записи, даже если номера похожи. При выгрузке нужно сохранить, какие записи относятся к одной покупке или посещению. Угадывать эту связь по телефону, столу или сумме нельзя</p><details class="dm-dictionary"><summary>Что показано на встрече и описано в документации</summary><div class="dm-dictionary-body"><p class="dm-boundaries">Ниже — особенности конкретных систем. Доступные клубу модули, права и совместную работу ещё нужно проверить.</p><p class="dm-boundaries"><strong>Что предложил ReMarked</strong> Поставщик предлагает вести запись через резервы: контакт покупателя, время, число гостей, место, статус и предоплату. Для персонального учёта группы обсуждаются отдельные резервы на участников. Это предварительная схема: связь покупки, каждого фактического посещения и общей оплаты ещё нужно показать. Мероприятия и билеты проверяем отдельно — новый разбор посвящён резервам</p><p class="dm-boundaries"><strong>Бронь и билет ReMarked.</strong> В серверном методе after-payment резерв создаётся после подтверждения банка; для тарифа без депозита — сразу. Этот метод проверяет занятость стола, но не его онлайн-доступность и вместимость. Events V2 не создаёт резерв и депозит. Поэтому способ удержания места и связь билета с бронью нельзя выбрать только по названию. <a href="https://api.remarked.ru/docs/reserves-server.html" target="_blank" rel="noopener">Серверные резервы, v1.0.0</a> · <a href="https://api.remarked.ru/docs/events-v2.html" target="_blank" rel="noopener">Events V2</a></p><p class="dm-boundaries"><strong>Лимиты: что объяснил Пётр и что ещё проверить.</strong> В демонстрации Пётр объяснил: планер ограничивает гостей или брони на слот; сайт при лимите не принимает новую бронь, а CRM предупреждает сотрудника, но позволяет сохранить её. Интервалы 15, 30 или 60 минут названы в разговоре; на кадрах показаны настройки по 30 минут. Для клуба нужно проверить конкретный способ бронирования и одновременные заявки. Отдельно решить, кто вправе превысить лимит. <a href="/remarked/part-1.html#u109">Разговор, реплики109–116</a></p><p class="dm-boundaries"><strong>Запись предоплаты не равна зачёту.</strong> Режим paid конкретного метода ReMarked отмечает уже совершённый внешний платёж только в ReMarked и сам не передаёт сумму в кассу. Документация iikoFront V6 отдельно описывает внешнюю обработанную оплату, предоплату и оплату заказа; V8 описывает возвраты с условиями версии, плагина, прав и смены. Запись об одной из этих операций не подтверждает, что остальные тоже выполнены. <a href="https://api.remarked.ru/docs/reserves.html" target="_blank" rel="noopener">Депозит резерва, v1.0.1</a> · <a href="https://iiko.github.io/front.api.doc/v6/ru/Payments.html" target="_blank" rel="noopener">iikoFront V6</a> · <a href="https://iiko.github.io/front.api.doc/2023/10/18/storno-order.html" target="_blank" rel="noopener">Возвраты iikoFront V8</a></p><p class="dm-boundaries"><strong>Мастера и выход — обсуждаемые варианты.</strong> Пётр предложил представлять мастера вкладкой, столом или залом; это ещё не проверенное расписание. Представление процедур блюдами обсуждал Иван. В материалах BandGo расчёт, разрешение выхода, проход и сдача браслета разделены; схема работы с конкретными замками и событие фактического ухода клуба ещё не установлены. <a href="/remarked/part-2.html#u132">Обсуждение мастеров</a> · <a href="/remarked/part-1.html#u272">Показ ручного закрытия брони</a></p><p class="dm-boundaries"><strong>Обращения и история.</strong> Книга обращений ReMarked описывает регистрацию, ответ, меры и проверку ответа перед публикацией; связь с посещением, ответственный и срок ещё нужно проверить. API продаж ReMarked и SDK iikoFront V9 описывают разные записи и номера. Наличие этих интерфейсов ещё не подтверждает, что из систем клуба можно получить полную историю с сохранёнными связями записей. <a href="https://api.remarked.ru/docs/complaint-book-api.html" target="_blank" rel="noopener">Книга обращений</a> · <a href="https://api.remarked.ru/docs/purchases-api.html" target="_blank" rel="noopener">Продажи ReMarked</a> · <a href="https://iiko.github.io/front.api.sdk/v9/html/Properties_T_Resto_Front_Api_Data_Orders_PastOrder.htm" target="_blank" rel="noopener">Заказы iikoFront V9</a></p><p class="dm-boundaries"><strong>Статусы и пересадка при связи с iiko.</strong> В описанной синхронизации отметка «Гость пришёл» поступает с кассы, а закрытие стола закрывает резерв. Статус «Закрыта» освобождает стол на схеме; фактическую занятость и доступность для новых продаж нужно согласовать отдельно. Пересадка при открытом заказе или статусе «Гость пришёл» не синхронизируется. Обычная бронь без телефона не передаётся в iiko. Для клуба нужно выбрать порядок действий и отдельный учёт фактического присутствия <a href="https://kb.remarked.ru/kb/article/88" target="_blank" rel="noopener">Синхронизация резервов с iiko</a> · <a href="https://kb.remarked.ru/kb/article/90" target="_blank" rel="noopener">Статусы резервов</a></p><p class="dm-boundaries"><strong>Сумма чеков в ReMarked.</strong> При подключённых плагине броней iiko и интеграции продаж можно включить показ заказа через поддержку. Сумма появляется у брони «Гость пришёл», если по её столу есть заказ за сегодня; несколько чеков складываются. Данные обновляются примерно раз в минуту. Это помогает сверить заказ, но принадлежность чеков конкретному посещению и распределение предоплаты проверяются отдельно <a href="https://kb.remarked.ru/kb/article/1803" target="_blank" rel="noopener">Сумма и состав заказа</a></p><p class="dm-boundaries"><strong>Что ещё показать.</strong> В ответе названы автопосадка, автопродление, смена статуса неоплаченной брони по таймеру и частичная оплата. В изученных текстах документации их условия полностью не установлены. Попросить показать именно предлагаемую клубу версию; до этого не считать эти функции защитой от перепродажи или готовым распределением денег</p><p class="dm-boundaries">Источники: демо и API ReMarked — срез 10.11.2026; открытая база знаний ReMarked — проверка 11.11.2026; разбор пути гостя от 10.11 и коммерческое предложение получены 11.11.2026. Ранее изученные материалы iiko и BandGo — срез 04.11.2026. Доступность API ReMarked при повторной проверке 11.11 подтвердить не удалось. Документы и слова поставщика не заменяют испытание конфигурации клуба</p></div></details><section class="dm-comparison"><h3>Что проверить в ReMarked и нашем сайте</h3><p class="dm-compare-intro">Основной путь — собственный сайт с API ReMarked; виджет остаётся резервным вариантом. Показать весь путь, ограничения, доработки и сопровождение; роль BandGo в обслуживании посещения проверить отдельно</p><div class="dm-table-wrap"><table class="dm-compare"><thead><tr><th>Что сравнить</th><th>ReMarked</th><th>Наш сайт</th></tr></thead><tbody><tr><th scope="row">Тариф и вместимость</th><td>Настройки времени и мест описаны. Проверить весь интервал, общий остаток сайта и рецепции, запас и ресурсы. Исключённое из онлайн-записи место может оставаться доступным рецепции <a href="https://kb.remarked.ru/kb/article/72" target="_blank" rel="noopener">Ограничения онлайн-записи</a></td><td>Как хранить цены и считать занятость на всём интервале?</td></tr><tr><th scope="row">Бронь и билет</th><td>Предлагается резерв; для участников группы обсуждаются отдельные записи. Как связать покупку, билеты и резервы и защитить последнее место?</td><td>Как в предлагаемом решении связаны покупка, бронь и билет?</td></tr><tr><th scope="row">Онлайн-оплата и её учёт в iiko</th><td>Ссылки на оплату и депозит описаны. Как распределить общую сумму между посещениями и заказами iiko, выполнить частичный возврат и исключить повторный зачёт?</td><td>Как передать оплату и показать её распределение, остаток и возврат?</td></tr><tr><th scope="row">Гость и посещение</th><td>При синхронизации статус приходит с кассы. Где отмечается каждый пришедший и остаётся виден тот, кто рассчитался, но ещё внутри?</td><td>Где видно, кто купил посещение, кто по нему пришёл и находится ли человек ещё в клубе?</td></tr><tr><th scope="row">Мастера и шкафчики</th><td>Процедуры предложено вести отдельными резервами с ручной связью. Как одновременно занять мастера и помещение? Браслеты и замки проверяются отдельно</td><td>Что входит в предложение, а что остаётся ручным процессом или у поставщика замков?</td></tr><tr><th scope="row">История, API и выгрузка</th><td>История брони и анкета контакта описаны. Как получить связанную историю всей покупки, каждого посещения, заказов, возвратов и выдачи оборудования?</td><td>Какие сведения системы передают друг другу, как их выгрузить и кому они доступны? Что входит в предложение?</td></tr></tbody></table></div></section></div></details></section><nav aria-label="Этапы пути" class="phase-nav"><a href="#before"><b>01—05</b><span>До визита</span><i>↓</i></a><a href="#inside"><b>06—09</b><span>В клубе</span><i>↓</i></a><a href="#after"><b>10—11</b><span>Завершение и после визита</span><i>↓</i></a></nav><div class="toolbar"><div aria-label="Показать шаги" class="filters" role="group"><button aria-pressed="true" data-filter="all" type="button">Все шаги · 11</button><button aria-pressed="false" data-filter="key" type="button">Решающие вопросы · 6</button></div><div class="tools"><button aria-expanded="false" id="expand" type="button">Раскрыть все сценарии</button><button id="print" type="button">Печать / PDF</button></div></div><div aria-label="Легенда" class="legend"><span><i class="dot launch"></i>Условие запуска</span><span><i class="dot manual"></i>Ручной процесс</span><span><i class="dot boundary"></i>Граница систем</span></div><section aria-labelledby="h-before" class="phase" id="before"><div class="phase-heading"><span class="phase-no">01</span><div><h2 id="h-before">До визита</h2><p>Выбор посещения -&gt; Бронирование -&gt; Оплата</p></div><span class="range">ШАГИ 01—05</span></div><div class="path"><article class="step" data-key="false" data-number="01" data-type="boundary" id="step-01"><div class="step-top"><h3>Понять предложение</h3><span class="badge boundary">Граница систем</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Видит состав посещения или события, итоговую цену и ограничения. Если нужен депозит обычной брони, видит его отдельно</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Объясняют разницу между ценой посещения, депозитом брони и билетом на событие; называют, что включено и что оплачивается отдельно</dd></div><div class="layer"><dt>За сценой</dt><dd>Для каждого вида условий согласуют место настройки, момент вступления изменений и ответственного: сотрудника клуба или поддержку поставщика</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Получить действующие условия → Рассчитать выбор → Показать состав и итог → Проверить при оформлении → Сохранить оплаченные условия</span><div class="support-check">Это требование к показу, не подтверждение готовности. Настройки тарифов на сайте допустимы без своей базы гостей и личного кабинета</div></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 01</span><p>Где менять каждый вид условий и как проверить цену, которую увидит и оплатит гость?</p></div></div><figure aria-labelledby="map-caption-01" class="step-data-map" data-map-step="01"><figcaption id="map-caption-01"><strong>Процесс и данные · шаг 01</strong><span class="dm-choice">Источники и права — подтвердить</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Получить актуальные правила выбранного посещения или события</strong></div><div class="dm-edge"><span>Рассчитать выбор</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Показать состав, итоговую цену и отдельно депозит, если нужен</strong></div><div class="dm-edge"><span>Проверить при оформлении</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Сохранить цену и состав оплаченной покупки — показать, где и как</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd><p>Тариф посещения: выбрать источник правил клуба и того, кто меняет цену / дату её действия.</p><p>Депозит обычной брони: подтвердить настройки ReMarked и права сотрудника / поддержки; расчёт депозита не равен цене посещения.</p><p>Билет события: отдельные правила и цена в выбранном модуле мероприятий.</p><p>Кассовый учёт: отдельно проверить услуги, начисления и зачёт в iiko. Места настройки могут различаться.</p></dd></div><div><dt>При сбое</dt><dd>Отсутствующий или ненастроенный тариф не считать нулевой ценой. При ошибке или расхождении суммы до оплаты выяснить актуальные условия. Уже оплаченную цену и состав не менять молча. Назвать ответственного за сверку сайта, расчёта и iiko</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Показать посещение на 2 часа, 4 часа и «Безлимит», обе категории билетов; отдельно — депозит обычной брони и билет на событие. Гость проходит путь без нашего личного кабинета и самостоятельной базы гостей. Использовать именно предлагаемые клубу модули и права.</li><li>Изменить цену до оплаты: гость видит актуальные условия и итог, сумма к оплате с ними совпадает. Показать, где сотрудник меняет каждое правило и с какого момента оно действует.</li><li>Изменить тариф после оплаты: показать сохранённую цену и состав оплаченной покупки, связь с использованным расчётом / версией и соответствующее начисление iiko. Это ожидаемый результат проверки, не установленная функция.</li><li>Показать сбой расчёта, ненастроенный тариф и несовпадение сумм: кто разбирает причину, что видит гость и как затем сверяют результат. Отдельно подтвердить состав подключений, доработки и стоимость по приложению к договору.</li></ul></details><details><summary>Источники и границы шага · 13.11.2026</summary><ul><li><a href="https://api.remarked.ru/docs/reserves.html" rel="noopener noreferrer" target="_blank">RESERVES API · 1.0.1</a>: описан расчёт <b>депозита обычной брони</b>. Он не сохраняет цену и не создаёт бронь. Включение тарифов и доступность для клуба подтвердить; цену посещения этим не считать проверенной.</li><li><a href="https://api.remarked.ru/docs/events-v2.html" rel="noopener noreferrer" target="_blank">Events V2 · 2.0.0</a>: отдельный поток билетов событий, не тариф обычного посещения. Применять только к выбранному модулю мероприятий.</li><li><b>«Путь гостя БК1830» (BK1830.pdf), 10.11.2026:</b> стр. 3–4 — настройки резервов и вопросы цены; стр. 12 — фиксация комплектации после демонстрации. Это предлагаемая схема пути, не перечень оплаченных сервисов.</li><li><b>Коммерческий состав:</b> подтвердить подключения и стоимость по приложению к договору; оферта — отдельный источник условий. Наличие API в документации не доказывает включение функции в оплачиваемый состав. Срез источников — 13.11.2026, текущий доступ / настройки клуба не испытаны.</li></ul></details><style>@media print{#step-01 details a{color:#244738}}</style></article><article class="step" data-key="true" data-number="02" data-type="launch" id="step-02"><div class="step-top"><h3>Подобрать визит</h3><span class="badge launch">Условие запуска</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Выбирает дату, начало, длительность и состав группы -&gt; Видит доступные варианты на сайте клуба</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Сотрудники помогают выбрать обычное посещение или мероприятие; проверяют варианты в разделе «Резервы» ReMarked</dd></div><div class="layer"><dt>За сценой</dt><dd>Сотрудники проверяют места на всё посещение, нужный мужской или женский пул, мастера, помещение и время подготовки</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Сайт клуба -&gt; Доступное время ReMarked -&gt; Проверка общей вместимости и ресурсов -&gt; Доступные варианты</span><div class="support-check">API резервов описывает залы, места и интервалы; Events — остаток мероприятия. Единый остаток сайта и рецепции, два пула и учёт человека один раз ещё нужно показать</div></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 02</span><p>Хватит ли мест на всё время посещения и свободны ли нужные мастер и помещение?</p></div></div><figure aria-labelledby="map-caption-02" class="step-data-map" data-map-step="02"><figcaption id="map-caption-02"><strong>Процесс и данные · шаг 02</strong><span class="dm-auto">ReMarked API — доступность клубу проверить</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Сайт клуба: время и состав группы</strong></div><div class="dm-edge"><span>Запросить доступность ReMarked</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Резервы + мероприятие + нужные ресурсы</strong></div><div class="dm-edge"><span>Проверить весь интервал и запас</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Сайт: доступные варианты</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>В ReMarked подтвердить настройки лимитов, мужского и женского пулов, подготовки и права на запас. У залов и мест — ID резервов; у мероприятия и типа билета — ID Events. Их связи с общим остатком и ресурсами нужно показать; число столов или билетов не равно числу людей</dd></div><div><dt>При сбое</dt><dd>Если доступность не подтверждена, не предлагать этот интервал к покупке; показать повтор проверки или помощь рецепции. Пустой ответ не всегда означает занятость. Выбор времени ещё не удерживает место: перед оформлением нужна новая проверка. Оплаченные покупки не отменять из-за сбоя проверки</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Вместимость 20, запас 2, занято 14: доступны ещё 4 места на всём интервале. Показать общий остаток сайта и рецепции, отдельно мужской и женский пулы и права на запас. Свободный шкафчик сам по себе не добавляет места в клубе</li><li>Участник мероприятия внутри своего посещения занимает одно общее место. Показать связь брони с мероприятием, отдельный остаток программы и доступность мастера и помещения; остаток билетов не заменяет общий остаток клуба</li><li>Проверить два, три и четыре часа. При закрытии зоны в 18:00 визит 17:00–19:00 не предлагается; при подготовке за полчаса предыдущие визиты заканчиваются к 17:30. Проверить дату за пределами записи и изменение остатка во время выбора</li></ul></details></article><article class="step" data-key="true" data-number="03" data-type="launch" id="step-03"><div class="step-top"><h3>Оформить посещение или билет</h3><span class="badge launch">Условие запуска</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Покупатель видит состав покупки и следующий шаг. Номер брони или билета показывается после создания соответствующей записи; при ожидании оплаты виден её срок</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Сотрудники оформляют посещение или билет по согласованным правилам вместимости и закрепления места</dd></div><div class="layer"><dt>За сценой</dt><dd>Клуб выбирает способ оформления: обычная бронь может создаваться до оплаты или после неё; билеты мероприятий оформляются отдельно. Для каждого способа нужно подтвердить закрепление и освобождение мест. Контакт покупателя не подменяет данные пришедших гостей</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Передать данные покупателя и состав покупки -&gt; Получить результат выбранного способа оформления -&gt; Проверить созданные записи и закрепление мест</span><div class="support-check">Покупатель может оплатить за других без их анкет. Его e-mail и телефон обязательны до оплаты. Категории и количество билетов описывают группу, а не пол покупателя. Запрос содержит также время, длительность и другие поля выбранного метода</div></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 03</span><p>Как не продать последнее место одновременно на сайте и у сотрудников рецепции?</p></div></div><figure aria-labelledby="map-caption-03" class="step-data-map" data-map-step="03"><figcaption id="map-caption-03"><strong>Процесс и данные · шаг 03</strong><span class="dm-auto">Автоматически — нужно проверить</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Указать данные покупателя и состав покупки</strong></div><div class="dm-edge"><span>Дата, время, длительность, категории и количество</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Оформить обычную бронь или билеты мероприятия</strong></div><div class="dm-edge"><span>Результат оформления и номера записей</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Проверить закрепление мест без двойной продажи</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>Основной путь — собственная форма сайта и API ReMarked; виджет резервный. Собственную базу гостей, кабинет и черновики на старте не создаём. Безопасную передачу из браузера и права клуба ещё нужно подтвердить; серверный секрет в браузер не передаётся, посредник не выбран. На показе найти номера броней и билетов с указанием системы и проверить их связь с покупкой и оплатой. Билет мероприятия и QR-подтверждение обычной брони различаются</dd></div><div><dt>При сбое</dt><dd>Если ответ потерян или пришла ошибка, запись или платёж уже могли появиться. Сначала выяснить результат, затем повторять по правилам выбранного метода. Защита от повторной заявки не доказывает защиту от продажи последнего места разным покупателям. Нужны понятный ответ покупателю и назначенный клубом порядок разбора; ссылка на оплату сама по себе не подтверждает ни получение денег, ни бронь</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Один покупатель оформляет три посещения без анкет остальных гостей. Для выбранного метода отдельно решить вопрос имени: требуется ли оно, как оформить покупку за других и нужно ли менять форму. Новое поле имени пока не согласовано. Показать категории, количество и записи в системе. Для обычной брони отдельно показать создание до оплаты и оформление после оплаты: когда появляется бронь, закрепляется место и истекает ожидание. Наличие платёжной ссылки не считать удержанием места без проверки</li><li>Одновременно запросить последнее место на сайте и у двух сотрудников рецепции: подтверждается только одна покупка. Показать, где остальные видят отказ, чтобы не обещать одно место нескольким гостям</li><li>Потерять ответ при оформлении и повторить ту же заявку; отдельно изменить время или число гостей. Показать уже созданную запись, отказ или неизвестный результат и дальнейшее действие. Для способа с оплатой до создания брони не повторять получение платёжной ссылки автоматически</li><li>Отдельно показать билет мероприятия: удержание, срок оплаты, освобождение неоплаченных мест и связь с бронью, если она создаётся. Участник внутри своего посещения не занимает второе общее место; место на программе проверяется отдельно. Подарочный сертификат — самостоятельный сценарий, его поддержку этот шаг не подтверждает</li></ul></details></article><article class="step" data-key="true" data-number="04" data-type="launch" id="step-04"><div class="step-top"><h3>Оплатить</h3><span class="badge launch">Условие запуска</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Покупатель видит результат оплаты и отдельно — состояние брони</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Сотрудники разъясняют сумму, срок и результат проверки оплаты; до оплаты у покупателя запрошены e-mail и телефон</dd></div><div class="layer"><dt>За сценой</dt><dd>Сотрудники сверяют операцию банка или платёжного сервиса, депозит ReMarked и зачёт по заказам iiko</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Подтвердить операцию у платёжного сервиса -&gt; Связать депозит с покупкой -&gt; Проверить зачёт по заказам iiko</span><div class="support-check">Начисление показывает стоимость услуг, оплата — полученные деньги. Оплаченный депозит в ReMarked сам не доказывает списание у банка, подтверждение брони или зачёт в iiko. Предоплата уменьшает доплату, а стоимость оказанной услуги остаётся в счёте</div></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 04</span><p>Как разделить одну оплату между заказами и не зачесть одну сумму дважды?</p></div></div><figure aria-labelledby="map-caption-04" class="step-data-map" data-map-step="04"><figcaption id="map-caption-04"><strong>Процесс и данные · шаг 04</strong><span class="dm-auto">Автоматически — нужно проверить</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Проверить результат операции у платёжного сервиса</strong></div><div class="dm-edge"><span>Сверить сумму, валюту и номер операции</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Связать операцию, депозит и посещения или билеты</strong></div><div class="dm-edge"><span>Передать подтверждённую сумму и связи</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Показать распределение и однократный зачёт в iiko</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>Результат оплаты — у банка или платёжного сервиса; депозит и бронь — в ReMarked; начисления и зачёт — в iiko. Для каждого номера указывают систему-источник и проверяют связи: операция → депозит → бронь или билеты → посещения → заказы. Отдельно видны зачтённая сумма, остаток и возврат. Способ обмена, подключение эквайринга и состав запуска ещё согласуются</dd></div><div><dt>При сбое</dt><dd>Таймаут не означает отказ оплаты. Сначала выясняют результат операции и покупки; автоматически создавать новый платёж нельзя. Повторяют только по правилам выбранного метода. Поздняя оплата не гарантирует место: проверяют вместимость и согласуют другое время или возврат по условиям клуба</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Один покупатель вносит предоплату за троих без анкет всех гостей. Показать одну операцию, депозит, связи с посещениями и заказами iiko; отдельно зачесть сумму в каждом заказе, показать остаток и доплату. Затем отменить одно посещение и выполнить частичный возврат согласованным способом. Услуги остаются в начислениях, одна сумма не зачитывается дважды</li><li>Дважды передать подтверждение одной оплаты; затем оборвать ответ после запроса. Проверить операцию у платёжного сервиса и депозит ReMarked до новой попытки. Защита от повторов одного метода не доказывает защиту всей цепочки: деньги, депозит и зачёт должны учитываться однократно. Пустая платёжная ссылка сама по себе не означает отказ или неоплату</li><li>Получить оплату после окончания удержания: заново проверить места. Если места нет, показать полученные деньги и согласовать другое время либо предусмотренный условиями возврат. Сверить сумму, единицы её передачи, документы предоплаты, зачёта и возврата; проверить, что повторное уведомление не меняет итог</li><li>Отдельно показать оплату подарка и последующее использование сертификата. Покупатель может не быть гостем; покупка сертификата, его погашение и зачёт денег по посещению — разные действия. Система выпуска, правила остатка и возврата ещё выбираются</li></ul></details></article><article class="step" data-key="true" data-number="05" data-type="launch" id="step-05"><div class="step-top"><h3>Подготовиться / изменить планы</h3><span class="badge launch">Условие запуска</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Получает памятку; после переноса или отмены — актуальные условия и результат обращения</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Покупатель обращается к сотрудникам: своего кабинета на старте нет. Рецепция помогает изменить нужную бронь или билет</dd></div><div class="layer"><dt>За сценой</dt><dd>Рецепция меняет нужную запись и проверяет места. Уполномоченный сотрудник отдельно оформляет денежный возврат по правилам клуба; роли ещё нужно утвердить</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Найти покупку и нужного участника -&gt; Проверить новый интервал -&gt; Изменить бронь или билет -&gt; Сверить места, оплату и новые условия</span><div class="support-check">Перенос, отмена участия и возврат денег — отдельные действия. Перенос брони через API ещё нужно подтвердить. Для билета на мероприятие условия переноса и возврата отличаются; освобождённое место может удерживаться для листа ожидания</div></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 05</span><p>Как перенести или отменить одно посещение, не затронуть остальных гостей и правильно учесть оплату?</p></div></div><figure aria-labelledby="map-caption-05" class="step-data-map" data-map-step="05"><figcaption id="map-caption-05"><strong>Процесс и данные · шаг 05</strong><span class="dm-choice">Где хранить — выбрать</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Найти покупку и запись нужного участника</strong></div><div class="dm-edge"><span>Проверить все занятые интервалы</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Проверить новое время и изменить бронь или билет</strong></div><div class="dm-edge"><span>Сверить историю и номера записей</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Обновить подтверждение и отдельно учесть возврат</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>Рецепция работает в выбранной системе. Для каждой записи нужны её номер и система-источник; после переноса билета номер может измениться. Историю, автора и время изменения нужно показать. Памятку и новые условия направляют покупателю по согласованному каналу; автоматическую отправку, доступы и правила возврата ещё нужно подтвердить</dd></div><div><dt>При сбое</dt><dd>При потерянном ответе сначала найти исходную запись и проверить её состояние, время, места и денежную операцию. Затем решить, нужен ли повтор. Отказ в доступе не означает, что записи нет; сообщение об отмене не подтверждает возврат денег</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Из покупки на троих одного перенести с 14:00–17:00 на 15:00–18:00, второго отменить, третьего сохранить. Проверить весь новый интервал, места остальных и остаток оплаты; для перенесённого освободить только 14:00–15:00. Показать новые условия покупателю и сотрудникам</li><li>Отдельно показать перенос и возврат одного связанного билета мероприятия: проверить допустимость действия, новый номер, сохранение остальных билетов и место в продаже либо в листе ожидания. Доплату или возврат разницы оформить отдельно; отмена участия не возвращает деньги автоматически</li><li>После потерянного ответа и при работе двух сотрудников установить сохранённый результат до повтора. Проверить историю автора и времени, доставку новых условий и однократность денежного возврата, в том числе после закрытия исходной смены</li></ul></details></article></div></section><section aria-labelledby="h-inside" class="phase" id="inside"><div class="phase-heading"><span class="phase-no">02</span><div><h2 id="h-inside">В клубе</h2><p>Фактический гость -&gt; Услуга -&gt; Время</p></div><span class="range">ШАГИ 06—09</span></div><div class="path"><article class="step" data-key="false" data-number="06" data-type="boundary" id="step-06"><div class="step-top"><h3>Прийти и зарегистрироваться</h3><span class="badge boundary">Граница систем</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Узнаёт, что оплачено, на каких условиях можно пройти и до какого времени остаться</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Сотрудники находят покупку, отмечают, кто пришёл по каждому посещению или билету, и записывают время прихода</dd></div><div class="layer"><dt>За сценой</dt><dd>Сотрудники разбирают опоздание, расхождения оплаты, неполный состав группы и спорное повторное предъявление билета</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Найти покупку и проверить оплату -&gt; Связать купленное посещение с пришедшим гостем -&gt; Отметить фактический приход</span><span class="support-check">Фактическое посещение продолжается, пока гость внутри. Статус групповой брони и открытый заказ не подтверждают приход каждого. QR-подтверждение обычной брони, билет Events и отметка фактического входа — разные сведения</span></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 06</span><p>Как отметить приход по купленному посещению и видеть, кто сейчас в клубе?</p></div></div><figure aria-labelledby="map-caption-06" class="step-data-map" data-map-step="06"><figcaption id="map-caption-06"><strong>Процесс и данные · шаг 06</strong><span class="dm-choice">Где хранить — выбрать</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Найти купленное посещение или билет</strong></div><div class="dm-edge"><span>Проверить, за что оплачено</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Связать купленное посещение или билет с пришедшим гостем</strong></div><div class="dm-edge"><span>Сохранить фактическое время</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Отметить приход и текущее пребывание</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>Сотрудники рецепции связывают купленное посещение с пришедшим гостем и отмечают время прихода. Нужно выбрать место учёта, права сотрудников и способ видеть тех, кто ещё внутри. При выдаче браслета эту запись связывают с выдачей отдельно; общий контакт покупателя не заменяет учёт каждого гостя</dd></div><div><dt>При сбое</dt><dd>Если покупка или оплата недоступны, сотрудник временно записывает номер покупки с названием системы, пришедших, время, своё имя и результат проверки. Кто разрешает допуск и что объясняют гостю — согласовать. После восстановления записи сверяют без повторного прихода и списания права посещения</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Найти покупку без приложения и отметить приход гостя. Показать, где сотрудники видят, какое посещение оплачено, кто по нему пришёл и находится ли этот человек ещё в клубе</li><li>Покупатель оплатил за нескольких, имён заранее не указал и сам не пришёл; появилась только часть группы. Показать, как сотрудники связывают купленные посещения или билеты с пришедшими гостями, отмечают каждого отдельно и сохраняют остальные для ещё не пришедших</li><li>Гость оплатил, но оплата не видна на рецепции. Показать, кто проверяет её по операции и покупке, кто принимает решение о допуске и как сотрудники объясняют ожидание гостю без повторной оплаты наугад</li><li>Повторно предъявить тот же QR, чужой, отменённый или уже использованный билет. Проверить право посещения, прежнюю отметку и действия сотрудника; не засчитать ещё один приход. Для обычной брони и Events порядок проверки показать отдельно</li><li>Принять гостя без записи: проверить места и условия оплаты, создать нужную запись и отметить фактический приход. Сотрудника, пришедшего как гость, учитывать по правилам посещения; кадровый учёт из этого не следует</li></ul></details><details class="use-case" id="uc-iiko-arrival"><summary>Пример описания юзкейса</summary><h4>Гость пришёл: начать обслуживание через iiko</h4><p class="dm-boundaries">Предлагаемый порядок для проверки; зависит от выбранной интеграции</p><p class="dm-boundaries">В описанной документацией синхронизации статус прихода поступает из iiko. Применимость к конфигурации клуба ещё нужно проверить</p><p class="dm-boundaries">Для мероприятий инструкция описывает отдельный сканер билетов и время прохода. Его доступ, повторное сканирование и связь с учётом клуба нужно проверить; наличие этой функции не подтверждает работу входа по обычной брони.</p><dl class="dm-notes uc-layers"><div><dt>Гость</dt><dd>Сообщает о приходе и помогает найти покупку. Покупатель мог оплатить за других и сам не прийти; пришедших участников отмечают отдельно</dd></div><div><dt>Что делает администратор</dt><dd>Находит нужный резерв, сверяет дату, время и состав группы. Проверяет передачу брони в iiko. По согласованным ролям сотрудник начинает обслуживание на кассе; администратор проверяет, что статус пришёл в ReMarked, и отдельно отмечает фактический приход человека</dd></div><div><dt>За сценой</dt><dd>Заранее назначают, кто работает с кассой и кто ведёт персональный учёт. Один статус группового резерва не означает приход всех участников. Для гостя без записи согласуют отдельный порядок: функция «Занять стол» допускает работу без контакта, но обычная бронь без телефона не передаётся в iiko</dd></div><div><dt>IT-системы</dt><dd>ReMarked передаёт подтверждённую бронь в iiko, а статус «Гость пришёл» получает с кассы. Наличие статуса и успешную передачу проверяют раздельно. Приход через турникет или браслет здесь не предполагается</dd></div><div><dt>Данные</dt><dd>Номера покупки, резерва и заказа с названием каждой системы; для Events — номер билета. Дата, время, место, контакт покупателя, кто пришёл и кто ожидается, результат обмена, сотрудник и время отметки. Существующие номера и их связи проверяют; где хранить персональный приход и связь с выдачей браслета — выбрать</dd></div><div><dt>Если что-то пошло не так</dt><dd>Если бронь не передалась или результат отметки неизвестен, сначала проверить исходную запись и историю. Не создавать дубль и не повторять допуск вслепую. При отказе доступа обратиться к уполномоченному сотруднику; данные других гостей не раскрывать</dd></div><div><dt>Как проверить результат</dt><dd>В обеих системах найдена нужная связанная запись. По купленному посещению отмечен именно пришедший человек, остальные участники остаются ожидаемыми. Повторная проверка не создаёт ещё один резерв или приход. Кто, когда и где записывает действия сотрудников, показать отдельно</dd></div></dl><p class="dm-boundaries">Источники: <a href="https://kb.remarked.ru/kb/article/88" rel="noopener" target="_blank">Синхронизация резервов с iiko</a> · <a href="https://kb.remarked.ru/kb/article/56" rel="noopener" target="_blank">Гость без записи</a>; Разбор ReMarked, с. 1, 6. · <a href="https://kb.remarked.ru/kb/article/1805" rel="noopener" target="_blank">Мероприятия: сканер билетов</a></p></details></article><article class="step" data-key="false" data-number="07" data-type="boundary" id="step-07"><div class="step-top"><h3>Разместиться</h3><span class="badge boundary">Граница систем</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Получает браслет, готовый шкафчик и время окончания</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Сотрудники выдают браслет и шкафчик, объясняют, куда пройти</dd></div><div class="layer"><dt>За сценой</dt><dd>Сотрудники проверяют готовность шкафчика в нужном пуле — мужском или женском. Выдачу браслета, закрепление шкафчика и посадочное место учитывают отдельно; освобождение шкафа ещё не означает его готовность</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Связать выдачу с посещением конкретного гостя -&gt; Проверить доступ на замке -&gt; При замене сохранить посещение, услуги и оплату</span><span class="support-check">Потерянный браслет должен перестать открывать прежний шкафчик; отметки на экране недостаточно. Совместимость конкретных браслетов и замков показать с поставщиком</span></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 07</span><p>Где видно, кому выдан браслет и за кем закреплён готовый шкафчик?</p><div class="boundary-note">ReMarked описывает размещение по залам и столам. Номер стола, шкафчик, браслет и посещение — разные записи. Работу с выбранными замками и возможный обмен с BandGo нужно подтвердить отдельно; назначение шкафчика на экране не открывает его</div></div></div><figure aria-labelledby="map-caption-07" class="step-data-map" data-map-step="07"><figcaption id="map-caption-07"><strong>Процесс и данные · шаг 07</strong><span class="dm-manual">Порядок выдачи — согласовать</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Выбрать готовый шкафчик и браслет</strong></div><div class="dm-edge"><span>Указать посещение гостя и время выдачи</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Отметить выдачу браслета и закрепление шкафчика</strong></div><div class="dm-edge"><span>Показать работу на замке</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Проверить доступ к нужному шкафчику</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>Согласовать, где рецепция ведёт выдачу и возврат браслетов, закрепление и готовность шкафчиков двух пулов. Сохранять прежнее и новое назначение, время и сотрудника; номера записей связывать с исходной системой и посещением гостя, а не только с покупателем группы. Отдельно выбрать способ разрешения и отключения доступа на замках</dd></div><div><dt>При сбое</dt><dd>При потере браслета проверить гостя и действующую выдачу. Руководитель смены или назначенный сотрудник решает, как защитить вещи, если старый доступ не удалось отключить. При неизвестном результате сначала сверить фактический доступ и записи, затем повторять действие. На случай отсутствия связи согласовать временный учёт и последующую сверку. Неисправный или неподготовленный шкафчик другому гостю не выдают</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Выдать браслет и готовый шкафчик в каждом из двух пулов, затем заменить неисправный шкафчик. Посещение, услуги и оплата сохраняются; сотрудники видят историю замены. Неисправный шкафчик исключён из выдачи, освобождённый возвращается в оборот после подтверждения готовности</li><li>Гость потерял браслет: выдать новый и проверить на самом замке, что старый больше не открывает шкафчик, а новый открывает нужный. Если отключение старого браслета не подтверждено, показать порядок действий сотрудников: как они обеспечивают безопасность вещей и кто принимает решение о замене. Отдельно показать действия без связи с замком и последующую сверку записей</li><li>Гость пересел на другое место: показать, как сотрудники находят его для подачи заказа. Посещение и шкафчик сохраняются; смена места сама по себе не требует нового браслета или шкафа</li><li>Два сотрудника одновременно выбирают один шкафчик; затем повторяют выдачу после зависания экрана. Показать одну действующую выдачу без дублей, сохранение остальных посещений и понятный порядок сверки неизвестного результата</li></ul></details><details class="use-case" id="uc-seat-change"><summary>Пример описания юзкейса</summary><h4>Гость пересел с открытым заказом</h4><p class="dm-boundaries">Предлагаемый порядок для проверки; зависит от выбранной интеграции</p><p class="dm-boundaries">Документация описывает ограничение: пересадка при открытом заказе или статусе «Гость пришёл» не синхронизируется между ReMarked и iiko</p><dl class="dm-notes uc-layers"><div><dt>Гость</dt><dd>Просит другое посадочное место и продолжает тот же визит</dd></div><div><dt>Что делает администратор</dt><dd>Проверяет доступность нового места, находит текущее посещение и его заказы. Согласует пересадку с сотрудником, ведущим заказ; после изменений сверяет место и связанные записи в обеих системах</dd></div><div><dt>За сценой</dt><dd>До запуска выбирают порядок пересадки и ответственного за сверку. Сотрудник, который приносит заказ, должен видеть актуальное место. Новый резерв или повторную плату за вход ради пересадки не создают без отдельного обоснованного решения</dd></div><div><dt>IT-системы</dt><dd>Изменение в одной системе не считается подтверждением изменения в другой. Конкретный способ обновления и сохранения связи с заказом поставщик должен показать; автоматическая передача здесь не предполагается</dd></div><div><dt>Данные</dt><dd>Фактическое посещение, номера заказов, прежнее и новое посадочные места, результат изменения в каждой системе. Браслет и шкафчик сохраняются, если гость их не меняет</dd></div><div><dt>Если что-то пошло не так</dt><dd>Если системы показывают разные места или потерялась связь с заказом, сотрудник фиксирует расхождение и проверяет исходные записи с ответственным. Услуги и оплаты не переносят по догадке или одному номеру стола</dd></div><div><dt>Как проверить результат</dt><dd>Гостя находят на новом месте, все его заказы и оплата сохранены. Заказы соседних гостей не изменены; второе посещение и повторный вход не появились. Поставщик показывает результат пересадки в выбранном режиме интеграции</dd></div></dl><p class="dm-boundaries">Источники: <a href="https://kb.remarked.ru/kb/article/88" target="_blank" rel="noopener">Синхронизация резервов с iiko</a> (обновлено 12.10.2026, раздел «Пересадка гостей в айко»); схема BK1830 от 10.11.2026, с. 2, 6.</p></details></article><article class="step" data-key="false" data-number="08" data-type="manual" id="step-08">
+ <div class="step-top">
+  <h3>
+   Пользоваться услугами
+  </h3>
+  <span class="badge manual">
+   Ручной процесс
+  </span>
+ </div>
+ <div class="step-main">
+  <dl class="layers">
+   <div class="layer">
+    <dt>
+     Гость / результат
+    </dt>
+    <dd>
+     Выбирает процедуру на рецепции → Знает время, мастера и цену
+    </dd>
+   </div>
+   <div class="layer">
+    <dt>
+     Что делают сотрудники для гостя
+    </dt>
+    <dd>
+     Сотрудники уточняют, кому нужна услуга, записывают к мастеру и согласуют дополнения; мастер проводит процедуру
+    </dd>
+   </div>
+   <div class="layer">
+    <dt>
+     За сценой
+    </dt>
+    <dd>
+     До подтверждения сотрудники проверяют время мастера и помещения в пределах посещения. Где вести общее расписание и отмечать выполнение или отмену — нужно согласовать
+    </dd>
+   </div>
+   <div class="layer systems">
+    <dt>
+     Системы и данные
+    </dt>
+    <dd>
+     <span class="support-flow">
+      Записать получателя услуги → Проверить мастера и помещение → Отдельно отметить выполнение → Проверить начисление в iiko и зачёт оплаты
+     </span>
+     <span class="support-check">
+      Запись, выполнение, кассовая позиция и оплата — разные сведения. На проверке выполненная услуга должна начислиться один раз, а предоплата — отдельно уменьшить доплату. Работа всей цепочки ещё не подтверждена
+     </span>
+    </dd>
+   </div>
+  </dl>
+  <div class="question">
+   <span class="micro">
+    Главный вопрос · 08
+   </span>
+   <p>
+    Где видно, кому оказана услуга, кто её выполнил и что в iiko она начислена один раз?
+   </p>
+  </div>
+ </div>
+ <figure aria-labelledby="map-caption-08" class="step-data-map" data-map-step="08">
+  <figcaption id="map-caption-08">
+   <strong>
+    Процесс и данные · шаг 08
+   </strong>
+   <span class="dm-manual">
+    Вручную на старте
+   </span>
+  </figcaption>
+  <div class="dm-flow dm-compact">
+   <div class="dm-node dm-system">
+    <strong>
+     Записать получателя услуги
+    </strong>
+   </div>
+   <div class="dm-edge">
+    <span>
+     Показать запись сотрудникам
+    </span>
+    <b aria-hidden="true">
+     -&gt;
+    </b>
+   </div>
+   <div class="dm-node dm-object">
+    <strong>
+     Проверить время мастера и помещения
+    </strong>
+   </div>
+   <div class="dm-edge">
+    <span>
+     Проверить начисление и зачёт предоплаты
+    </span>
+    <b aria-hidden="true">
+     -&gt;
+    </b>
+   </div>
+   <div class="dm-node dm-system">
+    <strong>
+     Отдельно отметить выполнение и сверить заказ iiko
+    </strong>
+   </div>
+  </div>
+  <dl class="dm-notes">
+   <div>
+    <dt>
+     Где хранить и менять данные
+    </dt>
+    <dd>
+     ReMarked предлагает рассмотреть отдельные резервы процедур с номером основного визита в комментарии. Это вариант для показа: комментарий не обеспечивает связь записей и одновременную занятость мастера и помещения. Нужно выбрать расписание, место отметки о выполнении и права на изменение заказа iiko. Получатель услуги может отличаться от покупателя. Номера визита, записи процедуры, заказа, позиции и оплаты различаются; их связи нужно показать с указанием системы-источника
+    </dd>
+   </div>
+   <div>
+    <dt>
+     При сбое
+    </dt>
+    <dd>
+     При обрыве связи или неизвестном результате сначала найти сохранённую запись и проверить заказ, затем решать о повторе. Сверить получателя, выполнение или отмену, начисление и зачёт предоплаты. Повтор сообщения о выполнении не должен создавать вторую позицию. Порядок временной записи без сети и последующей сверки нужно согласовать
+    </dd>
+   </div>
+  </dl>
+ </figure>
+ <details>
+  <summary>
+   Сценарии
+  </summary>
+  <ul>
+   <li>
+    Записать пришедшего гостя на процедуру в пределах посещения. Два сотрудника одновременно выбирают пересекающееся время: показать, как проверяются мастер и помещение и предотвращается двойная запись. При занятом мастере запись не подтверждается на это время; альтернативу согласуют с гостем. Выбор мастера на сайте для запуска не требуется
+   </li>
+   <li>
+    Отменить запись или отметить, что процедура не выполнена: проверить освобождение времени и отсутствие ложной отметки о выполнении. Начисление, удержание предоплаты и возврат — по отдельно согласованным правилам клуба. Затем выполнить другую процедуру и дважды передать отметку: проверить исполнителя и одно начисление в iiko. Строка продажи сама по себе не доказывает оказание услуги
+   </li>
+   <li>
+    Покупатель оплатил за другого гостя: показать получателя процедуры и её связь с его текущим посещением, записью и заказом iiko. Дополнительная процедура не создаёт повторной платы за вход. Прервать связь при сохранении и при передаче выполнения; после восстановления сверить исходный результат без дублей. Предоплату проверить отдельно от стоимости услуги
+   </li>
+  </ul>
+ </details>
+</article><article class="step" data-key="true" data-number="09" data-type="launch" id="step-09"><div class="step-top"><h3>Завершить / продлить</h3><span class="badge launch">Условие запуска</span></div><div class="step-main"><dl class="layers"><div class="layer"><dt>Гость / результат</dt><dd>Знает согласованное время окончания и цену продления; при отказе — когда нужно завершить посещение</dd></div><div class="layer"><dt>Что делают сотрудники для гостя</dt><dd>Сотрудник уточняет, кто и на сколько продлевает визит, проверяет возможность и согласует время и цену</dd></div><div class="layer"><dt>За сценой</dt><dd>Проверяют всё добавленное время: следующие брони, свободные места, нужных мастеров и помещения, запас и задержавшихся гостей</dd></div><div class="layer systems"><dt>Системы и данные</dt><dd><span class="support-flow">Проверить весь интервал → Согласовать время и цену → Сохранить продление → Проверить остаток мест и начисление iiko</span><span class="support-check">Изменение длительности в карточке ReMarked описано поставщиком. Изменение через сайт, обновление доступности и расчёт доплаты ещё нужно показать. Плановое окончание и оплата не подтверждают уход.</span></dd></div></dl><div class="question"><span class="micro">Главный вопрос · 09</span><p>Можно ли продлить весь запрошенный интервал, не заняв ресурсы следующего гостя? Видят ли сайт и рецепция один согласованный остаток?</p></div></div><figure aria-labelledby="map-caption-09" class="step-data-map" data-map-step="09"><figcaption id="map-caption-09"><strong>Процесс и данные · шаг 09</strong><span class="dm-auto">Автоматически — нужно проверить</span></figcaption><div class="dm-flow dm-compact"><div class="dm-node dm-system"><strong>Уточнить, чей визит продлевают</strong></div><div class="dm-edge"><span>Будущие брони, ресурсы и запас</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-object"><strong>Проверить всё добавленное время и цену</strong></div><div class="dm-edge"><span>Подтвердить и обновить остаток мест</span><b aria-hidden="true">-&gt;</b></div><div class="dm-node dm-system"><strong>Сохранить новое окончание и сверить начисление</strong></div></div><dl class="dm-notes"><div><dt>Где хранить и менять данные</dt><dd>В ReMarked описана правка длительности и окончания резерва. Нужно выбрать, кто вправе её делать и как сайт получает обновлённый остаток; пригодность API для изменения ещё не подтверждена. Время по брони, фактическое пребывание, оплаченный интервал и доступ по браслету проверяют раздельно. Автопродление статуса «Гость пришёл» не доказывает наличие места или расчёт доплаты. Правила тарифа, округления и начала отсчёта клуб ещё согласует; начисление и оплату сверяют в iiko отдельно. Продление связывают с нужным гостем и визитом; номера брони ReMarked и заказа iiko не взаимозаменяемы.</dd></div><div><dt>При сбое</dt><dd>При расхождении времени, цены или мест сначала выясняют, сохранилось ли продление и начисление; повторное нажатие или уведомление не должно удваивать доплату. Если результат неизвестен, не повторяют оплату вслепую. Новые продажи на спорный интервал требуют проверки остатка. Доступ к изменению дают уполномоченным сотрудникам; серверный ключ не передают в браузер.</dd></div></dl></figure><details><summary>Сценарии</summary><ul><li>Гость просит ещё час перед следующей оплаченной бронью. Проверить весь час и ресурсы, затем согласовать цену. Если на части часа мест нет — не подтверждать неподходящий вариант и не начислять за него. При успехе показать новое окончание, одинаковый остаток на сайте и рецепции, одно начисление и результат оплаты в iiko. Для группы повторить, когда продлевает только один участник: покупатель может не быть гостем.</li><li>Следующий гость уже пришёл, а предыдущий ещё внутри. Показать раздельно плановое окончание, оплату, доступ и фактическое присутствие. Проверить, что автопродление или закрытый счёт не скрывает занятое место. Кто разрешает использовать запас, как уведомляют об окончании и что делают при задержке — правила клуба для отдельного согласования.</li><li>Изменение сохранилось, но ответ потерян; повторить запрос, доставить уведомление дважды и задержать обновление сайта. До повторного изменения или доплаты найти сохранённый результат. Показать отказ сотруднику без права продления и сверку времени между системами.</li></ul></details></article></div></section><section aria-labelledby="h-after" class="phase" id="after"><div class="phase-heading"><span class="phase-no">03</span><div><h2 id="h-after">Завершение и после визита</h2><p>Расчёт и уход -&gt; История посещения</p></div><span class="range">ШАГИ 10—11</span></div><div class="path"><article class="step" data-key="true" data-number="10" data-type="boundary" id="step-10">
+ <div class="step-top">
+  <h3>
+   Рассчитаться и выйти
+  </h3>
+  <span class="badge boundary">
+   Граница систем
+  </span>
+ </div>
+ <div class="step-main">
+  <dl class="layers">
+   <div class="layer">
+    <dt>
+     Гость / результат
+    </dt>
+    <dd>
+     Видит начисления, зачтённую предоплату, доплату или возврат за своё посещение; получает подтверждение расчёта и отдельно завершает визит
+    </dd>
+   </div>
+   <div class="layer">
+    <dt>
+     Что делают сотрудники для гостя
+    </dt>
+    <dd>
+     Сотрудники объясняют расчёт и спорные суммы, проверяют оплату и фискальный чек; отдельно принимают браслет и отмечают уход каждого гостя
+    </dd>
+   </div>
+   <div class="layer">
+    <dt>
+     За сценой
+    </dt>
+    <dd>
+     Кассир сверяет деньги и заказы; рецепция — присутствие и уход; назначенный сотрудник — возврат браслета и готовность шкафа. Права исправлений, возвратов и решение спорных случаев нужно согласовать
+    </dd>
+   </div>
+   <div class="layer systems">
+    <dt>
+     Системы и данные
+    </dt>
+    <dd>
+     <span class="support-flow">
+      Сверить заказы и однократный зачёт предоплаты → Подтвердить расчёт и чек → Отдельно отметить уход, браслет и готовность шкафчика
+     </span>
+     <span class="support-check">
+      Результат эквайринга, депозит в CRM, зачёт в iiko, возврат денег и фискальный чек проверяют отдельно. За визит может быть несколько заказов. Закрытый заказ, закрытая бронь, разрешение выхода и фактический уход — разные результаты; оплата за группу не означает уход всех участников
+     </span>
+    </dd>
+   </div>
+  </dl>
+  <div class="question">
+   <span class="micro">
+    Главный вопрос · 10
+   </span>
+   <p>
+    Как сверить деньги и заказы конкретного гостя, затем отдельно подтвердить его уход и готовность шкафчика?
+   </p>
+   <div class="boundary-note">
+    Расчёт и чек показать с iiko и платёжным провайдером, доступ и оборудование — с интегратором; порядок клуба ещё согласовать
+   </div>
+  </div>
+ </div>
+ <figure aria-labelledby="map-caption-10" class="step-data-map" data-map-step="10">
+  <figcaption id="map-caption-10">
+   <strong>
+    Процесс и данные · шаг 10
+   </strong>
+   <span class="dm-choice">
+    Где хранить — выбрать
+   </span>
+  </figcaption>
+  <div class="dm-parallel-parent">
+   Одно фактическое посещение гостя
+  </div>
+  <p class="dm-parallel-note">
+   Отдельные результаты: порядок зависит от правил клуба, оплата не подтверждает уход
+  </p>
+  <div class="dm-parallel">
+   <div class="dm-node dm-system">
+    <strong>
+     Сверить начисления и оплату по заказам посещения
+    </strong>
+    <span>
+     Начислено, оплачено, доплата или возврат
+    </span>
+   </div>
+   <div class="dm-node dm-object">
+    <strong>
+     Отметить фактический уход гостя
+    </strong>
+   </div>
+   <div class="dm-node dm-object">
+    <strong>
+     Проверить возврат браслета и готовность шкафчика
+    </strong>
+   </div>
+  </div>
+  <dl class="dm-notes dm-with-example">
+   <div>
+    <dt>
+     Где хранить и менять данные
+    </dt>
+    <dd>
+     Заказы и кассовый расчёт — в iiko; результат онлайн-платежа — у платёжного провайдера; депозит — в ReMarked. Связать существующие номера платежа, депозита, брони, заказов и посещения с указанием системы-источника. Уход, браслет и готовность шкафа вести отдельно; место учёта и права сотрудников ещё выбрать
+    </dd>
+   </div>
+   <div>
+    <dt>
+     При сбое
+    </dt>
+    <dd>
+     Если результат оплаты или возврата неизвестен, кассир сначала проверяет исходную операцию; повторное списание или возврат без сверки не выполняют. При обрыве связи согласовать временный порядок, ответственного и действия, ожидающие проверки. После восстановления сверить записи двух сотрудников без повторного зачёта, оплаты или освобождения шкафа
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Пример
+    </dt>
+    <dd>
+     Два заказа: 2 500 + 1 500 = 4 000 ₽; зачтено 3 000 ₽ предоплаты; доплата 1 000 ₽. Это пример для проверки, не результат испытания
+    </dd>
+   </div>
+  </dl>
+ </figure>
+ <details>
+  <summary>
+   Сценарии
+  </summary>
+  <ul>
+   <li>
+    По двум заказам iiko, включая процедуру, показать начисления, общую предоплату, её распределение и однократный зачёт. Проверить эквайринг, депозит CRM, доплату и фискальный чек как отдельные записи. Покупатель оплатил группу, один гость уходит раньше: чужие услуги и остаток группы не попадают в его расчёт. Показать частичный возврат с привязкой к исходной оплате, его подтверждение и оставшийся остаток
+   </li>
+   <li>
+    Счёт оплачен, один гость ещё переодевается, другой ушёл. Отдельно показать присутствие каждого, разрешение выхода, фактический уход, возврат или утрату браслета, прекращение его доступа и готовность шкафа. Проверить, что закрытие кассы и брони не даёт продать занятое место или выдать непроверенный шкаф
+   </li>
+   <li>
+    Два сотрудника работают с одним посещением при обрыве связи. Результат оплаты или возврата неизвестен, подтверждение приходит повторно. Показать, кто проверяет исходную операцию и вправе исправлять записи, что видит второй сотрудник и как после связи исключаются повторные списание, зачёт, возврат и освобождение шкафа
+   </li>
+  </ul>
+ </details>
+ <details class="use-case" id="uc-bill-review">
+  <summary>
+   Пример описания юзкейса
+  </summary>
+  <h4>
+   Проверить общий расчёт по нескольким заказам
+  </h4>
+  <p class="dm-boundaries">
+   Предлагаемый порядок для проверки; зависит от выбранной интеграции
+  </p>
+  <dl class="dm-notes uc-layers">
+   <div>
+    <dt>
+     Гость
+    </dt>
+    <dd>
+     Просит объяснить итог: вход, процедуры, другие услуги, предоплату и сумму доплаты
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Что делает администратор
+    </dt>
+    <dd>
+     Находит посещение и относящиеся к нему заказы по подтверждённым связям номеров. Открывает состав в ReMarked и с кассиром сверяет iiko. Стол, телефон или совпавшая сумма сами по себе не доказывают принадлежность заказа этому гостю
+    </dd>
+   </div>
+   <div>
+    <dt>
+     За сценой
+    </dt>
+    <dd>
+     Согласуют права кассира на исправления и возврат, порядок распределения общей предоплаты и ответственного за расхождения. Сумма, уже зачтённая здесь или выделенная другому посещению, не используется второй раз; правила частичного возврата ещё утвердить
+    </dd>
+   </div>
+   <div>
+    <dt>
+     IT-системы
+    </dt>
+    <dd>
+     При подключённых плагине iiko, интеграции продаж и самой функции ReMarked показывает чеки стола с обновлением примерно раз в минуту. Это не подтверждение персонального расчёта или фискального чека. Запись оплаченного депозита через API в CRM сама по себе не передаёт его в iiko; доплата при выходе требует отдельного кассового порядка
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Данные
+    </dt>
+    <dd>
+     Номера брони и связанных заказов ReMarked; номер и источник заказа кассы; номера платежа, депозита, зачёта и возврата; подтверждение фискального чека. Связь с посещением каждого гостя и место хранения распределения ещё определить. Номера разных систем не считать одинаковыми без подтверждения
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Если что-то пошло не так
+    </dt>
+    <dd>
+     При устаревшей сумме, неизвестном результате или чужом заказе кассир проверяет исходные записи. Поступившее повторно подтверждение не означает новый платёж. Возврат не считают выполненным по отмене брони или обещанию сотрудника; его результат и остаток сверяют отдельно
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Как проверить результат
+    </dt>
+    <dd>
+     На двух заказах 2 500 и 1 500 ₽ показать итог 4 000 ₽, зачёт 3 000 ₽ и доплату 1 000 ₽. Проверить отсутствие повторного зачёта, пересадку и разных гостей за одним столом. Затем показать ранний уход участника группы, частичный возврат, неизвестный результат операции и повтор подтверждения. Это план согласованного теста, а не уже проведённое испытание
+    </dd>
+   </div>
+  </dl>
+  <p class="dm-boundaries">
+   Источники:
+   <a href="https://kb.remarked.ru/kb/article/1803" rel="noopener" target="_blank">
+    Сумма и состав заказа
+   </a>
+   ; Разбор ReMarked, с. 5, 7–8.
+   ·
+   <a href="https://api.remarked.ru/docs/reserves.html" rel="noopener" target="_blank">
+    API броней
+   </a>
+   ·
+   <a href="https://api.remarked.ru/docs/purchases-api.html" rel="noopener" target="_blank">
+    API продаж
+   </a>
+   ·
+   BK1830, с. 7–9, 11.
+  </p>
+ </details>
+ <details class="use-case" id="uc-paid-still-inside">
+  <summary>
+   Пример описания юзкейса
+  </summary>
+  <h4>
+   Гость рассчитался, но ещё находится в клубе
+  </h4>
+  <p class="dm-boundaries">
+   Предлагаемый порядок для проверки; зависит от выбранной интеграции
+  </p>
+  <p class="dm-boundaries">
+   В описанной синхронизации закрытие стола iiko передаёт закрытый статус резерву ReMarked. Ручной порядок закрытия применим к другому, отдельно согласованному режиму
+  </p>
+  <dl class="dm-notes uc-layers">
+   <div>
+    <dt>
+     Гость
+    </dt>
+    <dd>
+     Оплачивает счёт, но ещё переодевается или продолжает находиться в клубе
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Что делает администратор
+    </dt>
+    <dd>
+     Проверяет расчёт и отдельно — фактическое присутствие. Если резерв уже закрылся от кассы, продолжает учитывать человека в согласованном учёте посещений. Уход, возврат браслета и готовность шкафчика отмечает по факту
+    </dd>
+   </div>
+   <div>
+    <dt>
+     За сценой
+    </dt>
+    <dd>
+     Кассир подтверждает финансовый результат, рецепция — присутствие и уход, назначенный сотрудник — готовность шкафа. Клуб заранее выбирает, где видны эти отметки и кто решает расхождения; один человек может совмещать роли
+    </dd>
+   </div>
+   <div>
+    <dt>
+     IT-системы
+    </dt>
+    <dd>
+     Закрытый заказ и закрытая бронь не доказывают физический уход. По документации статус «Закрыта» освобождает стол на схеме с момента изменения. Поэтому отдельная отметка «гость внутри» ещё не защищает от новой продажи: нужно показать, как фактическая занятость учитывается при расчёте доступных мест. Автоматическое событие от браслета, BandGo или замка здесь не предполагается. Влияние кассового закрытия на доступные места нужно показать отдельно
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Данные
+    </dt>
+    <dd>
+     Номера посещения каждого гостя, брони, связанных заказов и выдачи; подтверждения расчёта и разрешения выхода; время фактического ухода; возврат или утрата браслета, прекращение его доступа и готовность шкафа. Где хранить эти связи и кто меняет отметки — определить; новая база гостей на нашем сайте для этого не предполагается
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Если что-то пошло не так
+    </dt>
+    <dd>
+     Если человек исчез из списка после расчёта, рецепция проверяет присутствие и согласованный учёт. При утрате браслета проверяет текущую выдачу; поставщик оборудования показывает прекращение старого доступа. Комментарий в CRM этого не подтверждает. Шкаф не выдают следующему гостю без проверки
+    </dd>
+   </div>
+   <div>
+    <dt>
+     Как проверить результат
+    </dt>
+    <dd>
+     Закрыть стол в тестовом примере, пока один гость остаётся внутри. Рецепция продолжает видеть его присутствие; уход другого участника не закрывает всю группу. Раздельно показать разрешение выхода, уход, возврат или утрату браслета, прекращение доступа и готовность шкафа. Проверить доступные места после кассового закрытия; реализация ещё не согласована и не испытана
+    </dd>
+   </div>
+  </dl>
+  <p class="dm-boundaries">
+   Источники:
+   <a href="https://kb.remarked.ru/kb/article/88" rel="noopener" target="_blank">
+    Синхронизация резервов с iiko
+   </a>
+   ·
+   <a href="https://kb.remarked.ru/kb/article/1803" rel="noopener" target="_blank">
+    Сумма и состав заказа
+   </a>
+   ·
+   <a href="https://kb.remarked.ru/kb/article/90" rel="noopener" target="_blank">
+    Статусы резервов
+   </a>
+   ; Разбор ReMarked, с. 8, 11.
+   ·
+   <a href="https://api.remarked.ru/docs/webhookreserve.html" rel="noopener" target="_blank">
+    Webhook брони
+   </a>
+  </p>
+ </details>
+</article><article class="step" data-key="false" data-number="11" data-type="boundary" id="step-11">
+ <div class="step-top">
+  <h3>
+   Дать обратную связь / вернуться
+  </h3>
+  <span class="badge boundary">
+   Граница систем
+  </span>
+ </div>
+ <div class="step-main">
+  <dl class="layers">
+   <div class="layer">
+    <dt>
+     Гость / результат
+    </dt>
+    <dd>
+     Получает ответ на своё обращение; при желании снова выбирает посещение по шагам 02–04
+    </dd>
+   </div>
+   <div class="layer">
+    <dt>
+     Что делают сотрудники для гостя
+    </dt>
+    <dd>
+     Сотрудник уточняет, кто обратился и к какому посещению относится вопрос, принимает обращение и сообщает результат по согласованному каналу
+    </dd>
+   </div>
+   <div class="layer">
+    <dt>
+     За сценой
+    </dt>
+    <dd>
+     Сотрудники назначают ответственного и срок, связывают обращение с посещением и передают незаконченные вопросы следующей смене. Покупатель и пришедший гость могут быть разными людьми
+    </dd>
+   </div>
+   <div class="layer systems">
+    <dt>
+     Системы и данные
+    </dt>
+    <dd>
+     <span class="support-flow">
+      Найти фактическое посещение -&gt; Назначить ответственного и срок -&gt; Сохранить состояние обращения, ответ и результат
+     </span>
+     <span class="support-check">
+      В API книги обращений ReMarked описаны приём обращения и публичный реестр обработанных записей; ответ публикует сотрудник в кабинете. Это не полный список открытых вопросов. Связь с посещением, ответственного, срок и передачу смене нужно согласовать и показать отдельно
+     </span>
+    </dd>
+   </div>
+  </dl>
+  <div class="question">
+   <span class="micro">
+    Главный вопрос · 11
+   </span>
+   <p>
+    Кто ответит гостю, как проверить результат и где найти историю его посещения?
+   </p>
+  </div>
+ </div>
+ <figure aria-labelledby="map-caption-11" class="step-data-map" data-map-step="11">
+  <figcaption id="map-caption-11">
+   <strong>
+    Процесс и данные · шаг 11
+   </strong>
+   <span class="dm-choice">
+    Где хранить — выбрать
+   </span>
+  </figcaption>
+  <h4 class="dm-track-heading">
+   Обращение гостя
+  </h4>
+  <div class="dm-flow dm-compact">
+   <div class="dm-node dm-system">
+    <strong>
+     Получить вопрос или отзыв гостя
+    </strong>
+   </div>
+   <div class="dm-edge">
+    <span>
+     Уточнить вопрос и срок
+    </span>
+    <b aria-hidden="true">
+     -&gt;
+    </b>
+   </div>
+   <div class="dm-node dm-object">
+    <strong>
+     Связать с посещением и назначить ответственного
+    </strong>
+   </div>
+   <div class="dm-edge">
+    <span>
+     Передать незавершённое следующей смене
+    </span>
+    <b aria-hidden="true">
+     -&gt;
+    </b>
+   </div>
+   <div class="dm-node dm-object">
+    <strong>
+     Сохранить состояние, ответ и результат
+    </strong>
+   </div>
+  </div>
+  <h4 class="dm-track-heading">
+   Данные для клуба — независимо от обращений
+  </h4>
+  <div class="dm-flow dm-compact">
+   <div class="dm-node dm-system">
+    <strong>
+     Получить сведения из выбранных систем
+    </strong>
+   </div>
+   <div class="dm-edge">
+    <span>
+     Проверить, все ли записи получены и кому они доступны
+    </span>
+    <b aria-hidden="true">
+     -&gt;
+    </b>
+   </div>
+   <div class="dm-node dm-object">
+    <strong>
+     Получить историю с сохранёнными связями записей
+    </strong>
+   </div>
+   <div class="dm-edge">
+    <span>
+     Сохранить связи записей с разными номерами
+    </span>
+    <b aria-hidden="true">
+     -&gt;
+    </b>
+   </div>
+   <div class="dm-node dm-system">
+    <strong>
+     Использовать историю для анализа и перехода в другую систему
+    </strong>
+   </div>
+  </div>
+  <dl class="dm-notes">
+   <div>
+    <dt>
+     Где хранить и менять данные
+    </dt>
+    <dd>
+     Выбрать, где вести обращение, ответственного, срок, ответ и результат. Для истории сохранять номера записей вместе с системой-источником и явными связями: покупка, посещения участников, услуги, заказы, оплаты, возвраты, браслеты и шкафчики. Реестр обращений, выгрузка контактов и API продаж по отдельности такую историю не подтверждают
+    </dd>
+   </div>
+   <div>
+    <dt>
+     При сбое
+    </dt>
+    <dd>
+     Если ответ на отправку обращения потерян, сначала проверить регистрацию через сотрудника: повтор может создать ещё одно обращение. При выгрузке сверять периоды, страницы и пропуски; повторную загрузку проверять на дубли и изменения. Уведомления об изменении брони могут приходить повторно или не прийти; одного их потока недостаточно для полного архива
+    </dd>
+   </div>
+  </dl>
+ </figure>
+ <details>
+  <summary>
+   Сценарии
+  </summary>
+  <h4 class="dm-scenario-group">
+   Обращение гостя
+  </h4>
+  <ul>
+   <li>
+    Гость оспаривает услугу по конкретному посещению. Найти связанные записи, назначить ответственного и срок, сохранить ответ и результат. Следующая смена видит незавершённый вопрос; ответ не раскрывает сведения других участников группы. Возврат денег при необходимости оформляется отдельно с проверкой результата перед повтором
+   </li>
+   <li>
+    Ответ на обращение, опрос после визита и приглашение вернуться проверять отдельно: кто отправляет, кому и через какую систему. Контакты покупателя до оплаты не считаем согласием на автоматические опросы и рекламу. Для выбранных отправок согласовать основание, согласие, отказ, лимит повторов и журнал доставки. Проверить ошибочный контакт, недоставку и отказ; после отказа приглашения не уходят. Напоминания о незавершённой покупке отложены
+   </li>
+  </ul>
+  <h4 class="dm-scenario-group">
+   Данные для клуба
+  </h4>
+  <ul>
+   <li>
+    На обезличенном примере восстановить историю: покупатель оплатил за нескольких гостей, пришла часть группы, один перенёс посещение; затем были услуга, частичный возврат, замена браслета и обращение. Связи между номерами в разных системах показываются явно, без угадывания по телефону или сумме. Для подарка отдельно проверить путь от сертификата до брони и пришедшего гостя
+   </li>
+   <li>
+    Показать, как клуб получает связанную историю, включая изменения: самостоятельно или через поставщика, в каком формате, с какой задержкой и стоимостью, в том числе после окончания договора. Проверить пропуск страницы, повтор и обновление записи. Сроки хранения, удаления и порядок запроса согласовать отдельно; выгрузка не означает удаление из исходных систем
+   </li>
+   <li>
+    Показать права сотрудника на просмотр, ответ, изменение и выгрузку. Доступ к API и состав подключений клуба подтверждаются отдельно. Внешняя аналитика и ИИ — только отдельно согласованный обезличенный обмен; он ещё не реализован. Связи с человеком остаются в защищённом контуре выбранных систем клуба; свою базу гостей и кабинет сайт на старте не создаёт
+   </li>
+  </ul>
+  <p class="dm-boundaries">
+   Источники:
+   <a href="https://api.remarked.ru/docs/complaint-book-api.html" rel="noopener" target="_blank">
+    Книга обращений
+   </a>
+   ·
+   <a href="https://api.remarked.ru/docs/purchases-api.html" rel="noopener" target="_blank">
+    API продаж
+   </a>
+   ·
+   <a href="https://api.remarked.ru/docs/reserves.html" rel="noopener" target="_blank">
+    Чтение броней
+   </a>
+   ·
+   <a href="https://api.remarked.ru/docs/webhookreserve.html" rel="noopener" target="_blank">
+    Уведомления о бронях
+   </a>
+   ·
+   <a href="https://help.remarked.ru/article/95" rel="noopener" target="_blank">
+    Выгрузка и удаление гостей
+   </a>
+   ; Разбор ReMarked, с. 8, 11–12.
+  </p>
+ </details>
+</article></div></section><section aria-labelledby="decision-title" class="decision"><span class="micro mint">Решение после проверки</span><h2 id="decision-title">Сравнить варианты для запуска</h2><p class="decision-intro">Показать одно посещение от покупки до ухода, затем сложные случаи из сценариев. Для ручных действий назвать ответственных, порядок работы двух сотрудников и время обработки. Проверить собственный сайт с API ReMarked; резервный виджет сравнить на тех же задачах</p><div class="decision-grid"><article class="decision-item"><span class="letter">A / ПРОВЕРКА ВСЕГО ПУТИ</span><h3>Что входит в предложение и как проходит весь визит</h3><p>Показать покупку и тестовую оплату на сайте, затем результат на рабочих экранах выбранных систем. Использовать версии программ, лицензии, модули и устройства, которые входят в предложение клубу. Показать автоматические обмены, ручные действия сотрудников и оформление мероприятий в предлагаемой версии модуля мероприятий</p></article><article class="decision-item"><span class="letter">B / ПОЛНАЯ СТОИМОСТЬ</span><h3>Цена на 3 и 6 месяцев</h3><p>Посчитать все расходы на 3 и 6 месяцев: систему, сайт или виджет, лицензии, оборудование, подключение, доработки, поддержку и платежи, которые зависят от использования. Для каждой доработки назвать результат, срок и того, кто будет её поддерживать</p><details class="offer-details"><summary>Что входит в предложение ReMarked — уточнить</summary><p>В КП указаны 66 000 ₽ за штатную настройку; в переписке поставщик уточнил: это сервисы, отмеченные в брифе, плюс 100 000 ₽ за кастомный виджет по примеру с демо. Вместе — 166 000 ₽ разово. Заполненного брифа в изученном пакете нет; перечень 15 сервисов в КП не доказывает, что выбраны все</p><p>Подписка: 11 100 ₽ в месяц либо 9 700 ₽ в месяц при оплате года. Отдельно указаны плата за номер мессенджеров и, при необходимости, плагин броней iiko: 2 500 ₽ за установку и 500 ₽ в месяц. Лицензии iiko и другие внешние расходы требуют отдельного расчёта</p><p>Для запуска нужно связать каждый результат с ответственным и ценой: покупка группы, удержание последнего места, распределение предоплаты, перенос и возврат, процедуры, продление, выход и выгрузка. По каждому указать: входит в настройку, входит в виджет, выполняется вручную или оценивается отдельно. Состав и приёмка виджета в полученном КП не описаны</p><p>Для начала работ КП требует оплатить первые три месяца использования; интеграционный платёж — после завершения интеграции. Указаны передача на интеграцию в течение пяти дней после оплаты и около 20 рабочих дней после получения всех материалов. Срок виджета и полный стартовый счёт уточнить отдельно</p></details></article><article class="decision-item"><span class="letter">C / ВЫХОД ИЗ ВРЕМЕННОГО РЕШЕНИЯ</span><h3>Срок, условия выхода и данные</h3><p>Согласовать срок и условия выхода и получения полного архива. На обезличенном примере восстановить покупку, купленные посещения, пришедших гостей, услуги, заказы, оплаты, возвраты и выдачу. Наличия API — программного интерфейса — недостаточно: нужно показать выгрузку с сохранёнными связями между записями</p></article><article class="decision-item"><span class="letter">D / РАБОТА СМЕНЫ</span><h3>Первые месяцы как проверка реальных процессов</h3><p>Записывать случаи, когда гостям не хватило мест, переносы, возвраты, запись к мастерам и время работы сотрудников. По данным первых месяцев решить, какая система нужна дальше и что в ней действительно стоит автоматизировать</p></article></div><div aria-label="Сквозная проверка" class="end-to-end"><span>Выбор</span><i>-&gt;</i><span>Бронь или билет</span><i>-&gt;</i><span>Оплата</span><i>-&gt;</i><span>Приход</span><i>-&gt;</i><span>Посещение</span><i>-&gt;</i><span>Завершение визита</span></div><p class="dm-end-note">Расчёт, уход и готовность шкафчика отмечаются отдельно</p></section><footer><div class="bottom"><span>БК1830 · путь гостя</span><span>Карта пути гостя · 04.11.2026 · Обновлено 13.11.2026</span></div></footer></main><script>
+const steps=[...document.querySelectorAll('.step')],phases=[...document.querySelectorAll('.phase')],details=[...document.querySelectorAll('.step details')],expand=document.querySelector('#expand');
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));steps.forEach(s=>s.hidden=button.dataset.filter==='key'&&s.dataset.key!=='true');phases.forEach(p=>p.hidden=![...p.querySelectorAll('.step')].some(s=>!s.hidden));}));
+function sync(){const all=details.every(d=>d.open);expand.textContent=all?'Свернуть все сценарии':'Раскрыть все сценарии';expand.setAttribute('aria-expanded',String(all));}expand.addEventListener('click',()=>{const next=!details.every(d=>d.open);details.forEach(d=>d.open=next);sync();});details.forEach(d=>d.addEventListener('toggle',sync));
+const printDetails=[...document.querySelectorAll('details')];let printState;
+window.addEventListener('beforeprint',()=>{if(!printState)printState=printDetails.map(d=>d.open);printDetails.forEach(d=>d.open=true);});
+window.addEventListener('afterprint',()=>{if(printState){printDetails.forEach((d,i)=>d.open=printState[i]);printState=undefined;}sync();});
+document.querySelector('#print').addEventListener('click',()=>window.print());
+</script></body></html>
